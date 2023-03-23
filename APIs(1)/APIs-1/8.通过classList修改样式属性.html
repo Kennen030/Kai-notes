@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: #000;
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            border: 5px solid #16619e;
+        }
+
+        .boxAdd {
+            color: #c70808;
+            background: #0bdbf7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">123412341234</div>
+    <script>
+        // 通过 classList 添加属性
+        // 1.获取元素
+        const box = document.querySelector('.box')
+        // 2.添加 类 样式 add()
+        box.classList.add('boxAdd')     // 不用加 .
+        // 3.删除 类 样式 remove()
+        // box.classList.remove('boxAdd')
+        // 4.切换 类 样式 toggle()         // 有 该类样式 则删除该类,没有则 加上该类
+        box.classList.toggle('boxAdd')
+    </script>
+</body>
+
+</html>

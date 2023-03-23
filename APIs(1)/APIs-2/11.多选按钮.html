@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.多选按钮.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th class="allCheck"><input type="checkbox" name="" id="checkAll">
+                <span class="all">全选</span>
+            </th>
+            <th>商品</th>
+            <th>商家</th>
+            <th>价格</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" class="ck"></td>
+            <td>小米手机</td>
+            <td>小米</td>
+            <td>￥1999</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" class="ck"></td>
+            <td>小米净水器</td>
+            <td>小米</td>
+            <td>￥4999</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" class="ck"></td>
+            <td>小米电视</td>
+            <td>小米</td>
+            <td>￥5999</td>
+        </tr>
+    </table>
+
+    <script>
+        // 1. 多选框按钮
+        const checkAll = document.querySelector('#checkAll')
+        // 2. 小的复选框
+        const cks = document.querySelectorAll('.ck')
+        // console.log(cks)
+        // 3. 多选框按钮 事件
+        checkAll.addEventListener('click', function () {
+            // 3.1 自己的选中状态
+            // console.log(this.checked)       // ture
+            // 3.2 遍历所有的小复选框，让它们的选中状态和 大的多选框按钮一样
+            for (let i = 0; i < cks.length; i++) {
+                // cks[i].checked = checkAll.checked
+                cks[i].checked = this.checked       // this 指向的是函数的调用者，所以可以用this
+            }
+        })
+
+        // 4. 小复选框控制 大多选框按钮
+        // 4.1 给所有的小复选框添加点击事件
+        for (let i = 0; i < cks.length; i++) {
+            cks[i].addEventListener('click', function () {
+                // 4.2 判断小复选框是否都选中了
+                // console.log(document.querySelectorAll('.ck:checked'))   // 查看被选中的复选框  
+                // console.log(document.querySelectorAll('.ck:checked').length)   // 查看被选中的复选框的个数
+                // console.log(document.querySelectorAll('.ck:checked').length == cks.length)   // 判断是否 选中所有
+                checkAll.checked = document.querySelectorAll('.ck:checked').length == cks.length  // 大的复选框 等于小的复选框的全选状态
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box strong {
+            font-size: 40px;
+            color: #d3c11d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <strong>全班抽奖</strong>
+        <h1>恭喜获得一等奖： <span id="one"></span> </h1>
+        <h2>恭喜获得二等奖： <span id="two"></span> </h2>
+        <h3>恭喜获得三等奖： <span id="three"></span> </h3>
+    </div>
+    <script>
+        // 1.声明全班人数 数组
+        const arr = ['张一', '张二', '张三', '张四', '张五', '张六', '张七', '张八']
+
+        // 2.一等奖
+        // 在数组里 随机一个 索引号
+        const randou1 = Math.floor(Math.random() * arr.length)
+        // console.log(arr[randou1])
+
+        // 3.获取到 one 对象
+        const one = document.querySelector('#one')
+
+        // 4.把 id 为 one 的对象的内容 输出为 获奖者的名字
+        one.innerHTML = arr[randou1]
+        one.style.color = 'red'     // 顺便改个颜色
+
+        // 5.并从数组里 删除这个人 (就不会一个人拿到几个奖)
+        arr.splice(randou1, 1)
+        // console.log(arr);
+
+        // 6.二等奖
+        const randou2 = Math.floor(Math.random() * arr.length)
+        // 7.获取到 two 的文本
+        const two = document.querySelector('#two')
+        // 8.在 two 的文本里放 二等奖的名字
+        two.innerHTML = arr[randou2]
+        two.style.color = '#9bcf6b'     // 顺便改个颜色
+        // 9.从抽奖名单里删掉这个人
+        arr.splice(randou2, 1)
+
+        // 10.三等奖 同理
+        const randou3 = Math.floor(Math.random() * arr.length)
+        const three = document.querySelector('#three')
+        three.innerHTML = arr[randou3]
+        three.style.color = '#6bc3cf'     // 顺便改个颜色
+        arr.splice(randou3, 1)
+        console.log(arr);
+    </script>
+</body>
+
+</html>

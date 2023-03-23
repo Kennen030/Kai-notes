@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">1234</div>
+    <div class="box">asdf</div>
+    <div id="nav">444</div>
+    <ul>
+        <li>000</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+        // 根据 css选择器获取 DOM 元素
+        // 1. querySelector  // query(查询)Selector(选择器)
+        // 选择匹配的第一个元素,可以修改里面的元素
+        // const box = document.querySelector('div')   
+        const box = document.querySelector('.box')
+        console.log(box)   // 1234
+
+        const nav = document.querySelector('#nav')
+        console.log(nav)   // 444
+        // 修改 nav 对象的 元素
+        nav.style.color = 'red'
+
+        // const li = document.querySelector('ul li')   // 获取第一个 li
+        const li = document.querySelector('ul li:first-child')   // 获取第一个 li
+        console.log(li)   // 000
+
+        // 2. querySelectorAll
+        // 选择匹配的多个元素，不能修改里面的元素
+        const lis = document.querySelectorAll('ul li')   // 获取三个 li
+        console.log(lis)   // [li, li, li] 伪数组
+    </script>
+</body>
+
+</html>

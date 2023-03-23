@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 语法 setInterval(函数,间隔时间)  // 时间单位是毫秒
+        // setInterval(function () { }, 时间)
+        setInterval(function () {
+            console.log('每一秒显示一次')
+        }, 1000)
+
+        // 方法 2
+        function fn() {
+            console.log('我也一秒显示一次')
+        }
+
+        // 查看计时器 id
+        let n = setInterval(fn, 1000)   // 函数名后面不要加括号\
+        console.log(n)     // 2 表示第二个计时器    // 返回的是定时器的 id 数字
+
+        let m = setInterval(function () {
+            console.log('nihao')
+        }, 3000)
+        console.log(m)     // 3 表示第三个计时器
+
+        // 关闭计时器
+        clearInterval(1)
+        clearInterval(n)
+        clearInterval(m)
+    </script>
+</body>
+
+<!-- 根据时间 自动 重复执行某些代码 -->
+
+</html>

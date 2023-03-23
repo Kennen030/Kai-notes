@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米11</a></li>
+            <li><a href="#">小米10S</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">小米手机</a></li>
+            <li><a href="#">黑鲨4</a></li>
+            <li><a href="#">空调</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const input = document.querySelector('[type="search"]')     // 属性选择器
+        const ul = document.querySelector('.result-list')     // 属性选择器
+        // 1. 获得焦点触发事件
+        input.addEventListener('focus', function () {
+            ul.style.display = 'block'      // 显示出来
+            // 获得焦点 添加 边框的类
+            input.classList.add('search')
+        })
+        // 2. 失去焦点
+        input.addEventListener('blur', function () {
+            ul.style.display = 'none'       // 隐藏
+            // 失去焦点 移除 边框的类
+            input.classList.remove('search')
+        })
+    </script>
+</body>
+
+</html>

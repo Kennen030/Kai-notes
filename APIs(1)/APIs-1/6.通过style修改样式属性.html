@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #d1d1d1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // 1.获取元素
+        const box = document.querySelector('.box')
+        // 2.修改元素属性值
+        box.style.width = '500px'
+        box.style.backgroundColor = '#852727'   // 背景颜色单词中间不能使用➖ 用驼峰命名法就能解决
+        box.style.border = '9px solid #5ab4a5'
+        box.style.borderTop = '19px solid #94f398'
+        box.style.borderRight = '19px solid #94f398'
+
+        // body 标签 整个网页只有一个，可以用获取直接改样式
+        document.body.style.backgroundColor = '#aaa'
+    </script>
+</body>
+
+</html>

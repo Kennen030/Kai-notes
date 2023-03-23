@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 写一个checked 就相当于 checked="checked" -->
+    <!-- <input type="checkbox" name="" id="" checked> -->
+    <input type="checkbox" name="" id="">
+    <button>点击</button>
+    <!-- 禁用按钮 写一个 disabled 就相当于 disabled="disabled" -->
+    <!-- 经量写一个就好,Html5 的新规范 -->
+    <!-- <button disabled>点击</button> -->
+
+    <script>
+        // 1.获取 多选框
+        const selectAll = document.querySelector('input')
+        // 2.多选框的状态
+        // console.log(selectAll.checked);     // true
+        selectAll.checked = true             // checked="checked"
+        // selectAll.checked = 'true'             // 不要加引号,会变成字符串
+
+
+        // 获取 按钮
+        const button = document.querySelector('button')
+        // 按钮 禁用按钮默认是关闭状态
+        console.log(button.disabled)    // false
+        // 禁用该按钮
+        button.disabled = true  
+    </script>
+</body>
+<!-- 开关只能接受 布尔值 -->
+<!-- 字符串只有里面 没有值的时候 才是 false ,里面有值就是 true -->
+
+</html>

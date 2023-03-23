@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 当一个值 不会去改变时，就用常量
+        const num = 3
+
+        // 数组其实也是常量，因为它的地址并没有变化
+        const arr = [1, 2, 3, 4, 5]
+        arr.push('6')
+        console.log(arr);
+
+        // arr = ['a', 'b', 'c', 'd', 'e']     // 新数组会生成新地址，所以会报错
+        // console.log(arr);
+
+        // 对象也是同理
+        // const name = {}
+        // name = { 1, 2, 3, 4, 5}     // 会报错，因为新对象生成了一个新地址
+
+
+        // 添加新元素不报错方法
+        const name = []
+        name[0] = 1
+        name[1] = 2
+        name[2] = 3
+
+        const obj = {}
+        obj.name = 'xiaoming'
+    </script>
+</body>
+<!-- 声明变量有 三种方法 var、 let\ const -->
+<!-- var 已近不常用了，问题很多 -->
+<!-- let 和 const 经量使用 const优先 -->
+<!-- 当一个值 经常改变的时候就用 let -->
+<!-- 当一个值 不会改变的时候就用 const -->
+
+</html>

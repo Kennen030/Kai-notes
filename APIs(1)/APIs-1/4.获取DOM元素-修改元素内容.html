@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">文字内容</div>
+
+    <script>
+        const obj = {
+            uname: 'xiaowang'
+        }
+        console.log(obj.uname)     // 'xiaowang'
+        // 把 obj 对象里的 uname 属性改成 xiaohogn
+        obj.uname = 'xiaohong'
+        console.log(obj.uname)     // 'xiaohong'
+
+
+        // innerText 不会解析标签
+        // 1.获取元素
+        const box = document.querySelector('.box')
+        // 2.修改里面的文字内容     // 语法：对象.innerText 属性
+        console.log(box.innerText)     // 获取了里面的文字内容
+        // box.innerText = '<i>你好，我喜欢冰淇淋</i>'    // 和修改对象里的属性一样，不会解析标签
+
+
+        // inerHTML 会解析标签
+        console.log(box.innerHTML)
+        box.innerHTML = '<i>你好，我喜欢冰淇淋</i>'    // 标签被解析了 字体变成倾斜的了
+    </script>
+</body>
+
+</html>

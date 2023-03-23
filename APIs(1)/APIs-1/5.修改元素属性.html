@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lbox1 {
+            font-size: 30px;
+        }
+
+        #lbox2 img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="lbox1">你好</div>
+        <div id="lbox2"><img src="images/pic1.jpg" alt=""></div>
+    </div>
+    <script>
+        // 1.获取到元素
+        const text = document.querySelector('.box #lbox1')
+        const pic = document.querySelector('.box #lbox2 img')
+
+        // 2.操作元素
+        // 如果该元素有这个属性，则会修改里面的值，如果没有这个属性，则会自动添加上去
+        text.style.color = 'red'
+        pic.src = "images/pic2.png"
+        pic.title = '初音未来' 
+    </script>
+</body>
+
+</html>

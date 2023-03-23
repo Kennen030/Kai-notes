@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 背景图居中平铺屏幕 */
+            background: url(../images/pic1.jpg) no-repeat top center/cover;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1.先申明图片的数组
+        const arr = ['pic1.jpg', 'pic2.png', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg', 'pic6.jpg', 'pic7.jpg', 'pic8.jpg']
+        // 2.随机出 数组索引号
+        const random = Math.floor(Math.random() * arr.length)
+        console.log(arr[random]);
+        // 3.获取到图片的对象属性,并且修改元素属性
+        // document.body.style.background = `url(../images/${arr[random]})`     // 这个不能全比例显示
+        document.body.style.backgroundImage = `url(../images/${arr[random]})`
+    </script>
+</body>
+
+</html>

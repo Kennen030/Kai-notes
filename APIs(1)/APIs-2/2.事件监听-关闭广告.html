@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #fa7c7c;
+            margin: 100px auto;
+        }
+
+        .box_1 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 5px;
+            top: 5px;
+            background-color: #50f33b;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1"></div>
+    </div>
+
+    <script>
+        // 1.获取对象
+        const box = document.querySelector('.box')  // 别忘了加 .
+        const box_1 = document.querySelector('.box_1')
+
+        // 2.事件监听
+        box_1.addEventListener('click', function () {
+            box.style.display = 'none'
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src="./images/slider01.jpg" alt="" />
+        </div>
+        <div class="slider-footer">
+            <p>对人类来说会不会太超前了？</p>
+            <ul class="slider-indicator">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 信息
+        const sliderData = [
+            { url: './images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+            { url: './images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+            { url: './images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+            { url: './images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+            { url: './images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+            { url: './images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+            { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+            { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+        ]
+
+        let i = 0   // 控制播放第几张图片
+        // 1. 获取对应元素
+        const img = document.querySelector('.slider-wrapper img')           // 图片
+        const text = document.querySelector('.slider-footer p')             // 文字内容
+        const color = document.querySelector('.slider .slider-footer')      // 背景色
+
+        // 2.右按钮
+        // 2.1 获取右按钮
+        const next = document.querySelector('.next')
+        // 2.2 点击事件
+        next.addEventListener('click', function () {
+            // console.log('nihao')
+            // console.log(sliderData[i]);
+
+            i++         // 每次点击就切换到下一张
+            // 2.5 轮播到最后一张照片，返回到第一张
+            if (i >= sliderData.length) {       // 如果 i 等于数组长度 就从 跳到第一张
+                i = 0
+            }
+            // i = i >= sliderData.length ? 0 : i      // 三元表达式，如果 i 大于等于数组长度 则 等于 0 否则 i 不变
+
+            toggle()
+        })
+
+        // 3.左按钮
+        // 3.1 获取左按钮
+        const prev = document.querySelector('.prev')
+        // 3.2 添加点击事件
+        prev.addEventListener('click', function () {
+            i--
+            i = i < 0 ? (sliderData.length - 1) : i      // 如果 i 小于 0 时(超过了第一张图片 -1) 则从最后一张开始
+            // 第一张图片是 0 ，最后一张照片是 7
+
+            toggle()
+        })
+
+        // 4. 声明一个函数，更换图片文字等对应的内容
+        function toggle() {
+            img.src = sliderData[i].url
+            text.innerHTML = sliderData[i].title
+            color.style.backgroundColor = sliderData[i].color
+            document.querySelector('.slider-indicator .active').classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        }
+
+        // 5. 自动播放
+        let timeID = setInterval(function () {
+            // 自动调用点击事件
+            next.click()
+        }, 3000)
+
+        // 6. 鼠标经过 大盒子 停止下一张轮播
+        // 6.1 获取大盒子
+        const slider = document.querySelector('.slider')
+        // 6.2 声明鼠标经过事件监听
+        slider.addEventListener('mouseenter', function () {
+            clearInterval(timeID)
+        })
+
+        // 7. 鼠标离开 大盒子 开启定时器
+        slider.addEventListener('mouseleave', function () {
+            // 7.1 鼠标离开时 重新开启定时器
+            timeID = setInterval(function () {
+                // 自动调用点击事件
+                next.click()
+            }, 3000)
+        })
+    </script>
+</body>
+
+</html>

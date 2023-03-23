@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="nihao" placeholder="你好" id="text">
+
+    <script>
+        // 获取到 输入框里的 值
+        const text = document.querySelector('input')
+        console.log(text.value);    // nihao
+        // console.log(text.innerHTML)      // 用innerHTML 是得不到里面的内容的
+
+
+        // 设置表单里的值
+        // text.value = '基尼太美'
+
+        // 把输入文本框变成密码框
+        text.type = 'password'
+    </script>
+</body>
+
+</html>

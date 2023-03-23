@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        // 当一个函数 当作参数来传递给另外一个函数时，这个函数就是 回调函数
+        function fn() {
+            console.log('nihao')
+        }
+        setInterval(fn, 1000)   // fn 是回调函数
+
+        // 也是回调函数
+        const input = document.querySelector('input')
+        input.addEventListener('click', function () {
+            console.log('nihao1')
+        })
+    </script>
+</body>
+
+</html>

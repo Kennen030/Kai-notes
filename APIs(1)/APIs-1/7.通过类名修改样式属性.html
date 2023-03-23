@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #a35d5d;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #37f38c;
+            margin: 100px auto;
+            border: 5px solid #16619e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red">你好</div>
+    <script>
+        // 1.获取元素
+        const div = document.querySelector('div')
+        // div.className = '.box'   // 不用加 .
+        // div.className = 'box' 
+        div.className = 'red box'   // 保留 div 的 red 类 并且加上 box 类
+    </script>
+</body>
+
+</html>

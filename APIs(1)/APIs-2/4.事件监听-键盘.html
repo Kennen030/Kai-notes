@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <script>
+        // 1. 键盘每次 输入时就会触发一次
+        const input = document.querySelector(`[type='text']`)
+        // input.addEventListener('keydown', function () {
+        //     console.log(input.value)
+        // })
+        // 2. 键盘没有 输入时触发一次
+        // input.addEventListener('keyup', function () {
+        //     console.log('键盘没有输入了')
+        // })
+        // 3. 键盘每次 输入内容时就会触发一次
+        input.addEventListener('input', function () {
+            console.log(input.value)
+        })
+    </script>
+</body>
+
+</html>
