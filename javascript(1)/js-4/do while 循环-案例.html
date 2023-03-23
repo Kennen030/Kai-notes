@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 打印这个人一生
+        var i = 1;
+        do {
+            console.log('这个人今年' + i + '岁了');
+            i++;
+        } while (i <= 10)
+        // 先执行一次结果再判断
+
+        // 2. 计算 1~100 之间的所有整数的和
+        var sum = 0;
+        var j = 1;
+        do {
+            sum = sum + j;
+            j++;
+        } while (j <= 100)
+        console.log(sum);
+        // 3. 弹出一个输入提示框“菜”，如果输入“徐坤”则结束，否则一直执行
+        do {
+            var str = prompt('菜');
+        } while (str !== '徐坤')
+        alert('基尼太美')
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

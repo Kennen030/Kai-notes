@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.用户输入两个数字
+        // 2.再输入符号
+        // 3.然后计算并答应出值
+        let num1 = +prompt('请输入第一个数字')
+        let num2 = +prompt('请输入第二个数字')
+        let sp = prompt('请输入 +  - * / 其中一个')
+        switch (sp) {
+            case '+':
+                alert(`两个数相加后的和是${num1 + num2}`)
+                break
+            case '-':
+                alert(`两个数相减后的和是${num1 - num2}`)
+                break
+            case '*':
+                alert(`两个数相乘后的和是${num1 * num2}`)
+                break
+            case '/':
+                alert(`两个数相除后的和是${num1 / num2}`)
+                break
+            default:
+                alert('请重新输入')
+        }
+    </script>
+</body>
+
+</html>

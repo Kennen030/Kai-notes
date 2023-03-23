@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 先定义一个临时变量
+        // 把 apple1 给到临时变量 temp
+        // 把 apple2 给到 apple1
+        // 再把临时变量里的 apple1 放到空的 apple2 里面
+        var temp;   //声明一个临时变量为空
+        var apple1 = '青苹果';
+        var apple2 = '红苹果';
+        temp = apple1;
+        apple1 = apple2;
+        apple2 = temp;
+        console.log('青苹果=', apple1);
+        console.log('红苹果=', apple2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

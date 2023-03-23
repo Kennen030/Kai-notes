@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 练习1
+        console.log(3 >= 4 || 'cai' != 'kun' && !(22 * 2 == 232) || false);     // true
+        // f || t && t || f
+
+        // 练习2
+        var num = 3;
+        console.log(4 == num * 2 - 2) && (5 + 2 * 3).toString == '11';  // true
+        // t && t
+
+        // 练习3
+        var a = 2 > 4 && 3 <= 4 && 2 == 3;
+        console.log(a); // false
+        // f && t && f
+
+        // 练习4
+        var b = 3 <= 4 || 3 > 1 || 3 != 2;
+        console.log(b); // true
+        // t || t || t
+
+        // 练习5
+        var c = 3 === '3';
+        console.log(c); // false
+        // f
+
+        // 练习6
+        var d = !c || b && a;
+        console.log(d); // true
+        // t || t && f
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 逻辑与 两侧都为 true 才是 true
+        console.log(3 > 5 && 4 > 3);    // false
+        console.log(3 < 5 && 4 > 3);    // true
+        // 2. 逻辑或 两侧之一为 true 就是 true ， 两侧都为 false 就是 false
+        console.log(4 > 6 || 4 < 6);    // true
+        console.log(4 > 6 || 4 < 2);    // true
+        // 3. 逻辑非
+        console.log(!true);     // false
+
+        // 练习
+        var num = 8;
+        var str = 'caixukun'
+        console.log(num > 7 && str.length >= 8);    //true
+        console.log(num < 7 || str.length <= 9);    //true
+        console.log(!(num == 7));   //true
+        console.log(!(num <= 7 || str.length == 8));    // false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

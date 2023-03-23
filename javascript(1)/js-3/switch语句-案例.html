@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 用户在输入框里输入一个水果，如果有就弹出水果的价格，如果没有就弹出 “今天没到该水果” -->
+    <script>
+        var fruit = prompt('请输入您要查询的水果');
+        switch (fruit) {
+            case '香蕉':
+                console.log('香蕉10/斤');
+                break;
+            case '苹果':
+                console.log('苹果20/斤');
+                break;
+            case '榴莲':
+                console.log('榴莲40/斤');
+                break;
+            case '橘子':
+                console.log('橘子3/斤');
+                break;
+
+            default:
+                console.log('今天没到该水果');
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

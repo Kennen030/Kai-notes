@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 双重循环执行思路:外层循环一次，内层循环全部，然后再跳到外层循环一次，再内循环... -->
+    <script>
+        // var str = '';
+        // for (var i = 1; i <= 5; i++) {
+        //     for (var j = 1; j <= 5; j++) {
+        //         str = str + '⭐';
+        //     }
+        //     str = str + '\n';
+        // }
+        // console.log(str);
+        var rows = prompt('请输入您想打印的行数');
+        var cols = prompt('请输入您想打印的列数');
+        var str = '';
+        for (var i = 1; i <= rows; i++) {
+            for (var j = 1; j <= cols; j++) {
+                str = str + '⭐';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

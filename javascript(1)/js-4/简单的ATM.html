@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1. 里面存有 100 块钱 -->
+    <!-- 2. 如果存钱，就用输入的钱加上之前存的钱，之后弹出余额 -->
+    <!-- 3. 如果取钱，就用余额减去取的钱，再弹出余额 -->
+    <!-- 4. 如果显示余额，就输出余额 -->
+    <!-- 5. 如果退出，弹出退出信息提示框 -->
+    <script>
+        shuru = prompt("请输入操作:\n 1.存钱\n2.取钱\n3.显示余额\n4.退出");
+        qian = 100;
+        while (qian >= 10) {
+            if (shuru == '1') {
+                var msg = prompt("请输入存钱金额");
+                msg = parseInt(msg);
+                qian = qian + msg;
+                alert('余额为' + qian);
+                shuru = prompt("请输入操作:\n 1.存钱\n2.取钱\n3.显示余额\n4.退出");
+            }
+            if (shuru == '2') {
+                var msg = prompt("请输入取钱金额");
+                msg = parseInt(msg);
+                qian = qian - msg;
+                alert('余额为' + qian);
+                shuru = prompt("请输入操作:\n 1.存钱\n2.取钱\n3.显示余额\n4.退出");
+            }
+            if (shuru == '3') {
+                alert('余额为' + qian);
+                shuru = prompt("请输入操作:\n 1.存钱\n2.取钱\n3.显示余额\n4.退出");
+            }
+            if (shuru == '4') {
+                shuru = false;
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

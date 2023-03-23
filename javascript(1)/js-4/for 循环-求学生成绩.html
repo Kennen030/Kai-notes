@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总成绩的平均值 -->
+    <script>
+        // 1. 弹出输入框输入总的班级人数(num)
+        // 2. 依次输入学生的成绩(保存起来score),用for循环
+        // 3. 计算成绩，先求总成绩(sum)，之后求平均成绩(avg)
+        // 4. 输出结果
+        var sum = 0;    // 总成绩
+        var avg = 0;    // 平均成绩
+        var num = prompt('请输入班级的总人数')  // num 总的班级人数
+        for (i = 1; i <= num; i++) {
+            var score = prompt('请依次输入' + i + '学生的成绩')
+            // sum += score;
+            sum = sum + parseFloat(score);  // prompt里输入的值是字符串，需要转换为数字型
+        }
+        avg = sum / num;
+        console.log(sum);
+        console.log(avg);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

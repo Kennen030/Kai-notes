@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 也是多分支语句 -->
+    <!-- 表达式：
+        switch (表达式) {
+            case value:
+                执行语句1
+                break;
+    
+            case value:
+                执行语句2
+                break;
+            ...
+
+            default:
+            最后的执行语句
+                break;
+        } -->
+    <script>
+        let num = 50;
+        switch (num) {
+            case 51:
+                console.log('这是51');
+                break;
+            case 50:
+                console.log('这是50');
+                break;
+            case 49:
+                console.log('这是49');
+                break;
+            // 如果都不是，就执行 default
+            default:
+                console.log('???');
+                break;
+        }
+        // num 的值和 case 里的值必须是 全等于 num === 50
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

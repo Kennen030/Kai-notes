@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- continue 关键字:用于立即跳出本次循环，继续下一次循环(本次执行 continue 循环之后会，代码会少一行) -->
+    <script>
+        for (var i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue;   // 退出第三次的循环，直接跳到i++
+            }
+            console.log('我正在吃第' + i + '个包子');
+        }
+
+        // 1. 求 1~100 之间，除了能被 3 整除之外的和
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                continue;
+            }
+            sum = sum + i;
+        }
+        console.log(sum);
+        // 1. 求 1~100 之间，除了能 个位数是 3 的整数之间的和
+        var sum1 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if ((i + 7) % 10 == 0) {
+                continue;
+            }
+            sum1 = sum1 + i;
+        }
+        console.log(sum1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

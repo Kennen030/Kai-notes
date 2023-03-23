@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 求 1-100 之间的所有数的平均值
+        // 定义一个变量总数 sum ，定义一个变量平均值 avg
+        var sum = 0;
+        for (i = 1; i <= 100; i++) {
+            sum = sum + i;
+        }
+        // console.log(sum / 100);
+        avg = sum / 100;
+        console.log(avg);
+
+        // 2. 求 1-100 之间的所有偶数和奇数的和
+        // 变量 偶数的和(even),变量 奇数的和(odd)
+        var even = 0;
+        var odd = 0;
+        for (i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even = even + i;
+            } else {
+                odd += i;
+            }
+        }
+        console.log('偶数的和' + even);
+        console.log('奇数的和' + odd);
+
+        // 3. 求 1-100 之间的所有能被 3 整除的数字的和
+        // 变量 被 3 整除的数字的和(result)
+        var result = 0;
+        for (i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                result += i;
+            }
+        }
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

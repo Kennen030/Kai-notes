@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1. 双循环 -->
+    <!-- 2. 外层打印行(每一行用 '\n' 换行) -->
+    <!-- 3. 内层控制星星个数:让 j = i (比如让第三行的 i = 3 ，让 j 从 3 开始执行 执行到 9 要 7 次) -->
+    <script>
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = i; j <= 9; j++) {
+                str = str + '⭐';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
