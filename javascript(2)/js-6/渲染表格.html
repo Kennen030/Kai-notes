@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2,
+        table {
+            /* 合并边框 */
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid #7e7e7e;
+            padding: 4px 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>订单确认</h2>
+    <script>
+        // 1.依次顺序弹出输入框
+        // 一个是隐式转换 一个是显式转换 都可以
+        let price = +prompt('请输入商品价格')
+        // let price = Number(prompt('请输入商品价格'))
+        let num = Number(prompt('请输入商品数量'))
+        let addr = prompt('请输入收货地址:')
+        // 2.计算总价
+        let total = price * num
+        // 3.渲染出表格
+        document.write(`
+            <table>
+            <tr>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>总价</th>
+                <th>收获地址</th>
+            </tr>
+            <tr>
+                <td>七彩虹3080ti</td>
+                <td>${price}元</td>
+                <td>${num}张</td>
+                <td>${total}元</td>
+                <td>${addr}</td>
+            </tr>
+        </table>
+        `)
+    </script>
+</body>
+
+</html>

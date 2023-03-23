@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 输入秒数，自动转换成 天 时 分 秒 -->
+    <script>
+        // 1.弹出输入框，输入秒数
+        let seconds = +prompt('请输入秒数')
+
+        // 2.计算出 天 时 分 秒，函数封装，个位秒数自动补零
+        function getTime(time) {
+            // console.log(time);
+            let days = parseInt(time / 60 / 60 / 24)
+            let hours = parseInt(time / 60 / 60 % 24)
+            let mins = parseInt(time / 60 % 60)
+            let sec = parseInt(time % 60)
+
+            // 3.补 0
+            // 如果 days 小于 10 则 前面 加'0' 否则直接输出 days
+            days < 10 ? days = '0' + days : days
+            hours < 10 ? hours = '0' + hours : hours
+            mins < 10 ? mins = '0' + mins : mins
+            sec < 10 ? sec = '0' + sec : sec
+
+            // document.write(`倒计时：${days}天, ${hours}小时, ${mins}分钟, ${sec}秒`)
+            return `倒计时：${days}天, ${hours}小时, ${mins}分钟, ${sec}秒`
+        }
+        // 4..把函数结果 赋值给 str 变量
+        let str = getTime(seconds)
+        // 5.打印输出
+        console.log(str);
+    </script>
+</body>
+<!-- 1.弹出输入框，输入秒数 -->
+<!-- 2.计算出 天 时 分 秒(函数封装)，个位秒数自动补零 -->
+<!-- 3.打印输出 -->
+
+</html>
+<!-- 公式 -->
+<!-- 小时： days = parseInt(总时间 / 60 / 60 / 24 % 24) -->
+<!-- 小时： hours = parseInt(总时间 / 60 / 60 % 24) -->
+<!-- 小时： mins = parseInt(总时间 / 60 % 60) -->
+<!-- 小时： sec = parseInt(总时间 % 60) -->

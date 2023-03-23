@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如果实参没给参数，x y 默认为 undefined(为false)
+        function fn(x, y) {
+            // 如果 x y 没值时，则执 把 0 赋值给 x y
+            x = x || 0
+            y = y || 0
+            console.log(x + y)
+        }
+        fn(1, 2)   //0
+        fn()    // 0
+
+        // 逻辑与 && 左边参数为假时，则不会执行右边的参数
+        let num = 1
+        console.log(false && num++)
+        console.log(num)   // 1
+        // 如果两边都是 真，则返回最后一个 真值
+        console.log(8 && 9);    // 9
+
+        // 逻辑或 || 左边参数为 真时，直接返回左边参数，也不会执行右边的参数
+        console.log(6 || num++)
+        console.log(num)
+        console.log(6 || 7);    // 6
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 隐式转换
+        // + - * / 里只有 +加号 不会转换成数字类型
+        console.log(1 + 1)      // 2
+        console.log(11 + '11')    // 1111
+        console.log(22 - '22')    // 0
+        console.log(2 * '2')    // 4
+        // 字符串数字在前面加上 + 也转换成数字型
+        // 数字型在控制台里是蓝色
+        console.log(+'123');    // 数字 123
+        console.log(+'11' + 11);    //数字 22
+
+
+        // 显式转换
+        let num1 = '123'
+        console.log(Number(num1))
+
+        // let years = prompt('请输入年份')
+        // console.log(Number(years))
+
+        let years = Number(prompt('请输入年份'))
+        console.log(years);
+
+        // parseInt(变量) 转换成数字型 保留整数
+
+        console.log(parseInt('999em'))  // 999
+
+        // parseFloat(变量) 转换成数字型 保留小数
+        console.log(parseFloat('239.239em'))  // 239.239
+
+    </script>
+</body>
+
+</html>

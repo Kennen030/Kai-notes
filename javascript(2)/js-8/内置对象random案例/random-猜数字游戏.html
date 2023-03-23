@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜奖</title>
+</head>
+
+<body>
+    <!-- 随机生成 1 ~ 10 之间的一个数字，让用户猜 -->
+    <!-- 如果猜大了，则提示：数字猜大了，继续猜 -->
+    <!-- 如果猜小了，则提示：数字猜小了，继续猜 -->
+    <!-- 猜对了，则提示，猜对了 -->
+    <script>
+        // (1) 方法 1
+        // 1.先随机生成 0 ~ 10 之间的数字
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1)) + N
+        }
+        let random = getRandom(1, 10)   // 1 ~ 10
+
+        while (true) {      // (while)循环判断大小 并且输出  // for循环经常用到明确循环几次
+            // 2.用户输入值
+            let num = +prompt('有奖竞猜，猜猜 1~10 之间的哪个数')
+            if (num > random) {
+                alert('数字猜大了，继续猜')
+            }
+            else if (num < random) {
+                alert('数字猜小了，继续猜')
+            }
+            else {
+                alert('恭喜你猜对了')
+                // 3.猜中了后中断
+                break           // 猜对了就结束中断
+            }
+        }
+
+
+
+        // (2) 方法 2
+        // 1.先随机出数字 1 ~ 10
+        // let num = Math.floor(Math.random() * 10) + 1
+
+        // while (true) {      // 无限循环
+        //     // 2.再让用户输入
+        //     let user = +prompt('有奖竞猜，猜猜 1~10 之间的哪个数')
+        //     if (user > num) {
+        //         // console.log('数字猜大了，继续猜')
+        //         alert('数字猜大了，继续猜')
+        //     }
+        //     else if (user < num) {
+        //         alert('数字猜小了，继续猜')
+        //     }
+        //     else {
+        //         alert('恭喜你猜对了')
+                // 3.猜中了后中断
+        //         break           // 猜对了就结束中断
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

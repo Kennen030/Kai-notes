@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 将数组[2,0,6,1,77,0,52,0,25,7] 中的大于等于 10 的元素选出来放入新的数组中 -->
+    <!-- 1. 声明一个新的数组用于存放新数据 (newArr) -->
+    <!-- 2. 遍历原来的数组，找出的大雨等于 10 的元素 -->
+    <!-- 3. 依次存放到新数组(newArr)里面 -->
+    <script>
+        // 方法 1
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        var j = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                // 新数组应该从 0 开始依次递增
+                newArr[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newArr);
+
+        // 方法 2
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        // newArr.length 就是0
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                // 新数组应该从 0 开始依次递增
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let students = [
+            { name: '小明', age: 12, gender: '男', tel: '111' },
+            { name: '小红', age: 13, gender: '女', tel: '222' },
+            { name: '小绿', age: 12, gender: '男', tel: '333' },
+            { name: '小草', age: 11, gender: '男', tel: '444' },
+            { name: '小王', age: 14, gender: '女', tel: '555' }
+        ]
+
+        // 数组里面的对象就能使用 for循环 遍历出来
+        for (let i = 0; i < students.length; i++) {
+            // 输出的是 索引号(字符串)
+            // console.log(i);         // '0' '1' '2' '3' '4'
+
+            // 输出的是 对象
+            // console.log(students[i]);  // {name....}
+
+            // 输出 对象里面的 name
+            console.log(students[i].name);  // '小明' '小红' .....
+        }
+
+        for (let key in students) {
+            console.log();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+    <script>
+        // 声明对象
+        let xiaoMing = {
+            uname: '小明',
+            gender: '男',
+            age: '13',
+            tel: '1234',
+            'nick-name': '蔡徐坤'
+        }
+
+        // 1.查 (对象名.属性名)
+        console.log(xiaoMing.tel)
+        console.log(xiaoMing.gender)
+        // 写法2 
+        console.log(xiaoMing['nick-name']);
+
+        // 2.改 
+        xiaoMing.gender = '女'
+        console.log(xiaoMing.gender)
+
+        // 3.增
+        xiaoMing.height = '1.72cm'
+        console.log(xiaoMing)
+
+        // 4.删
+        delete xiaoMing.age
+        console.log(xiaoMing)
+    </script>
+</body>
+<!-- 对象：一种 无序的数据类型的 集合，用来详细的描述某个事物 -->
+<!-- 对象由属性和方法组成： -->
+<!-- 属性：信息，特征（名词）；如颜色，长宽，数量 -->
+<!-- 方法：功能，行为（动词）；如奔跑，跳转，刷新 -->
+
+</html>

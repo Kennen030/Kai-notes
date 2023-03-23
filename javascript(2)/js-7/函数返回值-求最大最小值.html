@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求最大最小值</title>
+</head>
+
+<body>
+    <script>
+        // 求两个数中的最大值
+        function getMax(x = 0, y = 0) {
+            // 判断 x 是否大于 x ，如果大于 则返回 x ，否则返回 y
+            return x > y ? x : y
+        }
+        let num1 = +prompt('请输入第一个数字')
+        let num2 = +prompt('请输入第二个数字')
+        // 把用户输入的值代入 实参，把函数的结果返回给变量 results
+        let max = getMax((num1, num2))
+        console.log(`您输入的最大值是${max}`);
+    </script>
+</body>
+
+</html>

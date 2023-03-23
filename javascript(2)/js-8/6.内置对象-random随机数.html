@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math.random    返回一个0 到 1 之间的小数，但是不包括 1 
+        console.log(Math.random());     // 0.12312312(随机)
+        // 0 到 10 之间随机的 小数
+        console.log(Math.random() * (10 + 1));  // 6.947169067260241
+        // 0 到 10 之间随机的 整数
+        console.log(Math.floor(Math.random() * 11));    // 0 ~ 10 之间
+        // 5 ~ 10 之间的随机 整数
+        console.log(`5 ~ 10 之间的随机 整数：${Math.floor(Math.random() * (5 + 1)) + 5}`);    // 5 ~ 10 之间
+
+        // N ~ M 之间的随机整数 公式:Math.floor(Math.random() * (M - N + 1)) + N
+        let N = +prompt('请输入第一个数字，从第几开始')
+        let M = +prompt('请输入第二个数字，到哪个数字之间')
+        console.log(`${N} ~ ${M} 之间的随机 整数：${Math.floor(Math.random() * (M - N + 1)) + N}`);
+
+        function getRandom(N, M) {
+            //                               4 + 1  ，(0 ~ 5) + 4 ，(4 ~ 9) 就是 4 ~ 8 包括 8
+            return Math.floor(Math.random() * (M - N + 1)) + N
+        }
+        console.log(getRandom(4, 8));
+    </script>
+</body>
+
+</html>

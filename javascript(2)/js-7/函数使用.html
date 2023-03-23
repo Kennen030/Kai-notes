@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            padding: 9px;
+            margin: 2px;
+            border: 1px solid #fc7d7d;
+            border-radius: 2px;
+            box-shadow: 2px 2px 2px #f0ac2e;
+            color: #df30a4;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        // 定义一个变量，装 和
+        // let num
+        // 外循环 9 次
+        // for (let i = 1; i <= 9; i++) {
+        //     // 内循环 9 次
+        //     for (let j = 1; j <= i; j++) {
+        //         // num = i * j
+        //         // document.write(`<span>${j} × ${i} = ${num}</span>`)
+        //         document.write(`<span>${j} × ${i} = ${i * j}</span>`)
+        //     }
+        //     document.write('<br />')
+        // }
+
+        // 1. 声明
+        function chart99() {
+            for (let i = 1; i <= 9; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.write(`<span>${j} × ${i} = ${i * j}</span>`)
+                }
+                document.write('<br />')
+            }
+        }
+        // 2.调用
+        chart99()
+        chart99()
+    </script>
+</body>
+
+</html>
+<!-- 函数的后面都有小括号 -->

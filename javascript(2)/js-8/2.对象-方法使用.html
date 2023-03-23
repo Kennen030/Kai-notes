@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '小明',
+            // 方法
+            // 对象外面称为函数，对象里面称为方法
+            song: function (x, y) {
+                // document.write('aaaaaaaaaa')
+                console.log(x + y)
+            },
+            dance: function () {
+                console.log('跳舞');
+            }
+        }
+        // 方法调用
+        obj.song(1, 2)
+        obj.dance()
+    </script>
+</body>
+
+</html>

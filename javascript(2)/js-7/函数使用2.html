@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.求两个数的和
+        function getSum() {
+            let num1 = +prompt('请输入第一个数字')
+            let num2 = +prompt('请输入第二个数字')
+            alert(`两个数字的和是:${num1 + num2}`)
+        }
+        getSum()
+        // 2.求 1 ~ 100 之间累加的和
+        function getSun100() {
+            let sum = 0
+            for (let i = 1; i <= 100; i++) {
+                sum += i
+            }
+            console.log(sum)
+        }
+        getSun100()
+    </script>
+</body>
+<!-- 函数命名规范： -->
+<!-- 1.和变量命名一致 -->
+<!-- 2.前缀应该命名为动词 -->
+<!-- 3.常用动词: -->
+<!-- can    判断时候可执行某个动作 -->
+<!-- has    判断是否含义某个值 -->
+<!-- is     判断时候为某个值 -->
+<!-- get    获取某个值 -->
+<!-- set    设置某个值 -->
+<!-- load   加载某些数据 -->
+
+</html>

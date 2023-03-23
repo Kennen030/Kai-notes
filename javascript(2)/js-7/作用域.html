@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.全局变量,在任何区域都用访问和修改
+        let num = 10
+        console.log(num);
+
+        function sum() {
+            console.log(num);
+        }
+        sum()
+
+        function blue(x, y) {
+            // 形参也相当于 函数的局部变量
+            console.log(x);
+        }
+        blue(3, 4)
+        // console.log(x); // 报错:未声明该变量
+
+
+        // 2.局部变量，只能再当前函数内部访问和修改
+        function red() {
+            let str = 'red'
+        }
+        // console.log(str);    // 报错:未声明该变量
+    </script>
+</body>
+
+</html>

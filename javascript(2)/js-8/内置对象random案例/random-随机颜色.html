@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.先定义一个 随机颜色的函数
+        function getRandomColor(judge = true) {
+            // 3.如果是 true 则返回 #ffffff
+            if (judge) {
+                // (1) 先声明字符串 装 #ffffff 颜色
+                let str = '#'
+                // (2) 声明颜色的数组
+                let arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                // (3) 利用 for循环 循环六次
+                for (let i = 1; i <= 6; i++) {
+                    // (4) 每一次 在数组里面抽取一个
+                    let random = Math.floor(Math.random() * arr.length)     // 得到数组的索引号 0 ~ 15
+                    str += arr[random]
+                }
+                // (5) 返回值 给函数
+                return str
+            }
+            // 4.如果是 false 则返回 rgb(255, 255, 255)
+            else {
+                //                                 0 ~ 256 不包括 256
+                let red = Math.floor(Math.random() * (255 + 1))
+                let green = Math.floor(Math.random() * (255 + 1))
+                let blue = Math.floor(Math.random() * (255 + 1))
+                return `rgb(${red}, ${green}, ${blue})`
+            }
+        }
+        // 2.调用函数 getRandomColor()
+        console.log(getRandomColor(true))   // #ffffff
+        console.log(getRandomColor(false))  // rgb(255, 255, 255)
+        console.log(getRandomColor())
+    </script>
+</body>
+
+</html>

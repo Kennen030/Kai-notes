@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 遍历数组(不推荐)
+        let arr = ['a', 'b', 'c', 'd']
+        for (let key in arr) {
+            // 打印出数组的索引号(但是是字符串值)
+            console.log(key);           // '0' '1' '2' '3'
+        }
+
+        // 遍历对象
+        let obj2 = {
+            uname: '小明',
+            age: 16,
+            tel: '123',
+        }
+        for (let key in obj2) {
+            // console.log(key)         // 'uname' 'age' 'tel'
+            // console.log(obj2.key)    // 错误
+            // console.log(obj2['uname']); // '小明'
+            console.log(obj2[key])      // '小明' 16 '123'
+        }
+    </script>
+</body>
+
+</html>

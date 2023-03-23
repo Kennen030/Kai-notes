@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如果实参没有值，就执行arr的默认值,程序就不会报错
+        function getArrSum(arr = []) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            console.log(sum);
+        }
+        // getArrSum([1, 2, 3, 4, 5])
+        // getArrSum([5, 5, 5, 5, 5])
+        // getArrSum()
+        // 没有调用就不会执行
+
+        function getSum(x = 0, y = 0) {
+            let sum2 = 0
+            for (let i = x; i <= y; i++) {
+                sum2 += i
+            }
+            console.log(`他们之间的和是${sum2}`);
+        }
+        // 1.打印连个输入框，让用户把值存进去
+        num1 = +prompt('请输入从几开始')
+        num2 = +prompt('请输入到几结束')
+        // 2.然后调用这两个值
+        getSum(num1, num2)
+    </script>
+</body>
+
+</html>

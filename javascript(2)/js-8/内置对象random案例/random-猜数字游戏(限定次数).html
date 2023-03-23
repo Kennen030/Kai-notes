@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.先随机生成 0 ~ 10 之间的数字
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1)) + N
+        }
+        let random = getRandom(1, 10)   // 1 ~ 10
+
+        // 3. 设置循环次数，如果用了三次机会弹出 次数用完
+        // let judge = 3
+        // // 2.设定次数   如果知道循环次数就用 for
+        // for (let i = 1; i <= 3; i++) {      // 循环 3 次
+        //     let num = +prompt('三次机会，猜猜 1~10 之间的哪个数')
+        //     if (num > random) {
+        //         alert('数字猜大了，继续猜')
+        //     }
+        //     else if (num < random) {
+        //         alert('数字猜小了，继续猜')
+        //     }
+        //     else {
+        //         alert('恭喜你猜对了')
+        //         // 3.猜中了后中断
+        //         break           // 猜对了就结束中断
+        //     }
+        //     // 循环到第 3次 的时候 则执行已用完
+        //     if (judge == i) {
+        //         alert('次数已经用完了')
+        //     }
+        // }
+
+        // 方法 2
+        let judge = true
+        for (let i = 1; i <= 3; i++) {      // 循环 3 次
+            let num = +prompt('三次机会，猜猜 1~10 之间的哪个数')
+            if (num > random) {
+                alert('数字猜大了，继续猜')
+            }
+            else if (num < random) {
+                alert('数字猜小了，继续猜')
+            }
+            else {
+                alert('恭喜你猜对了')
+                // 猜对后把 flag 改成 false，让外面的 if 不在执行循环
+                judge = false
+                break           // 猜对了就结束中断
+            }
+        }
+        // 把另外一个循环写在外面
+        if (judge) {
+            alert('次数已经用完了')
+        }
+
+    </script>
+</body>
+
+</html>
+<!-- 如果知道循环次数就用 for循环 -->
+<!-- 不知道循环次数一般用 while循环 -->

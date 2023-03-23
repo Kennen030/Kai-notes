@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function num() {
+            // 相当于把 20 返回给了 num()
+            return 20
+            // return后面的语句不会被执行
+        }
+        // 然后再把 num 负值给变量 results
+        let results = num()
+        console.log(results)
+
+        // 求用户输入的两个数字的和
+        function getsummation(x = 0, y = 0) {
+            return x + y
+        }
+        let sum = getsummation(1, 2)
+        console.log(sum)
+    </script>
+</body>
+<!-- 函数返回值：是让函数返回的结果 还给调用者 -->
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 参数的默认值 如果 没给参数 结果就是 0 
+        // 相当于两个变量
+        function getSum(x = 0, y = 0) {
+            // 如果 x y 没有给值 就是 undefined
+            document.write(x + y)
+        }
+        getSum()
+    </script>
+</body>
+
+</html>

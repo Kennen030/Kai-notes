@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实参 里的值会赋给 形参
+        // getSum(形参1, 形参2)
+        function getSum(num1, num2) {   // getSum(6, 9)
+            console.log(num1 + num2);   // 6 + 9
+        }
+        // getSum(实参1, 实参2)
+        getSum(6, 9)
+        // 求 1 ~ end 之间累加的和
+        function getSum2(start, end) {
+            let sum = 0
+            // 从 start 开始，到 end 次
+            for (let i = start; i <= end; i++) {
+                sum += i
+            }
+            console.log(sum)
+        }
+        // 调用 50
+        // getSun(50)  // 1275
+        // getSun(100)  // 5050
+        getSum2(1, 100)  // 5050
+        getSum2(4, 5)    // 9
+    </script>
+</body>
+
+</html>

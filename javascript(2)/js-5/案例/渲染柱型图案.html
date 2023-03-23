@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid #fac32d;
+            border-bottom: 1px solid #fac32d;
+            margin: 50px auto;
+            /* 均匀分配盒子空间 */
+            justify-content: space-around;
+            /* 测轴底部对齐 */
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: #fac32d;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box div span {
+            color: #fac32d;
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            color: #ff7525;
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // 1.声明一个新的数组 用来装每个季度的总额
+        let arr = []
+
+        // 2.弹出 4 次输入框
+        for (let i = 1; i <= 4; i++) {
+            // num用来装总额
+            // let num = prompt(`请输入第${i}季度的总额`)
+            // 把总而放进 arr 里
+            // arr.push(num)
+            // 直接把 输入的的总额 追加到 arr 里
+            arr.push(prompt(`请输入第${i}季度的总额`))
+        }
+        // console.log(arr);
+
+        // 3.先打印出四个盒子
+        document.write('<div class="box">')
+
+        // 打印出四个季度的 柱轴
+        for (let j = 0; j < arr.length; j++) {
+            document.write(`
+                <div style = "height: ${arr[j]}px;">
+                    <span>${arr[j]}</span>
+                    <h4>第${j + 1}季度</h4>
+                </div > `)
+        }
+
+        document.write('</div>')
+    </script>
+</body>
+
+</html>

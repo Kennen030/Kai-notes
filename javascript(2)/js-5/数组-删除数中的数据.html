@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['a', 'b', 'c', 'd']
+        // 1.arr.pop() 从数组中删除最后一个元素，并返回该元素的值
+        // arr.pop()
+        // 打印出删除的元素
+        console.log(arr.pop());
+
+        // 2.arr.shift() 删除第一个元素，并返回该元素的值
+        arr.shift()
+
+        // 3.arr.splice(起始位置(索引号)，删除几个元素) 
+        let arr2 = [1, 2, 3, 4, 5, 6, 7]
+        // 起始位置从 0 开始
+        // 删除元素如果没写，默认从起始删除到最后
+        // arr2.splice(0, 1) // 从索引号 1 开始，删除了一个(删除了 '1')
+        console.log(arr2.splice(0, 1)); // 1
+    </script>
+</body>
+<!-- arr.pop() 从数组中删除最后一个元素，并返回该元素的值 -->
+<!-- arr.shift() 删除第一个元素，并返回该元素的值 -->
+<!-- arr.splice(起始位置(索引号)，删除几个元素) -->
+
+</html>
+<!-- 常用，比如：抽奖，删除指定商品 -->

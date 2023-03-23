@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 求最大值
+        // 1.声明一个保存最大元素的变量 max
+        // 2.默认最大值可以取数组里的第一个元素
+        // 3.遍历这个数组，把里面每个数组元素和 max 相比较
+        // 4.如果这个数组元素大于max 就把这个数组保存到 max 里，否则继续比较
+        // 5.最后输入 max
+        let arr = [2, 5, 3, 7, 8, 1]
+        let max = arr[0]
+        let min = arr[0]
+        // 因为 0 已经取出来了，所以 i 可以从 1 开始
+        for (let i = 1; i < arr.length; i++) {
+            // 如果 数组 arr[i] 大于 max，则把 arr[i] 负值到 max
+            if (max < arr[i]) {
+                max = arr[i]
+            }
+            if (min > arr[i]) {
+                min = arr[i]
+            }
+        }
+        // for 循环全部结束之后 打印出 max
+        console.log(`最大值是${max}`);
+        console.log(`最小值是${min}`);
+    </script>
+</body>
+
+</html>
