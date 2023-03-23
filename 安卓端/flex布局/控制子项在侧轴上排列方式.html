@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #33f;
+        }
+
+        div span {
+            width: 90px;
+            height: 70px;
+            background-color: #ff3;
+        }
+
+        /* 让第二个盒子 移动到 第一个盒子的前面 */
+        div span:nth-child(2) {
+            /* order 值越小越靠前 */
+            order: -1;
+        }
+
+        /* 单独 给第三个盒子让它侧轴向后对齐 */
+        div span:nth-child(3) {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

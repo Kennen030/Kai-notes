@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qwq</title>
+    <style>
+        div {
+            display: flex;
+            max-width: 800px;
+            min-width: 300px;
+            /* width: 800px; */
+            /* height: 500px; */
+            background-color: #3f3;
+            /* 默认情况下所有子元素都排在一条线上。子元素超过了父元素宽度，子元素会自动缩小 */
+            /* 另起一行显示 */
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        div span {
+            width: 210px;
+            height: 90px;
+            background-color: #33f;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+
+</html>

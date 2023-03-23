@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 书写格式一般按照从大到小，从小到大的书写顺序来写 */
+        /* 1.屏幕小于540px 时背景颜色改为蓝色  */
+        @media screen and (max-width:539px) {
+            body {
+                background: skyblue;
+            }
+        }
+
+        /* 2.屏幕为 540px ~ 969px 时，改为绿色 */
+        /* 如果有多个条件 可以通过 and 来连接 */
+        /* @media screen and (min-width:540px) and (max-width:969px) {
+            body {
+                background: #6bff4e;
+            }
+        } */
+        @media screen and (min-width:540px) {
+            body {
+                background: #6bff4e;
+            }
+        }
+
+        /* 3.屏幕为 970px 或者以上时 改为粉色 */
+        @media screen and (min-width:970px) {
+            body {
+                background: #ffb3b3;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-child(1) {
+            /* 传统盒子模型=宽+边框+内边距 */
+            width: 200px;
+            height: 200px;
+            background-color: #9bfcb8;
+            padding: 10px;
+            border: 10px solid rgb(127, 180, 233);
+        }
+
+        div:nth-child(2) {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-color: #ee6565;
+            border: 10px solid rgb(127, 180, 233);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

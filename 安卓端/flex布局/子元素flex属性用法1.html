@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qwq</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            background-color: #3f3;
+        }
+
+        div span:nth-child(1) {
+            width: 100px;
+            height: 90px;
+            background-color: #33f;
+        }
+
+        div span:nth-child(2) {
+            height: 90px;
+            background-color: rgb(233, 73, 62);
+            /* 让中间变成自适应宽度 */
+            flex: 1;
+        }
+
+        div span:nth-child(3) {
+            width: 100px;
+            height: 90px;
+            background-color: rgb(62, 233, 219);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

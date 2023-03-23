@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-center</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            background-color: #3f3;
+            /* 设置换行 */
+            flex-wrap: wrap;
+
+            /* align-content: flex-start; */
+            /* align-content: center; */
+            /* 先贴合两边再分剩余空间 */
+            /* align-content: space-between; */
+            /* 平均分配空间 */
+            /* align-content: space-around; */
+            align-content: space-evenly;
+        }
+
+        div span {
+            width: 180px;
+            height: 90px;
+            background-color: #33f;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+<!-- align-content属性在单行下是没有效果的 -->
+
+</html>

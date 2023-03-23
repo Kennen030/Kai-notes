@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 启用flex(弹性)布局，行内元素不转换也能有大小 */
+            display: flex;
+            width: 200px;
+            height: 100px;
+            background-color: #3f3;
+            /* 自适应居中 */
+            justify-content: space-around;
+        }
+
+        div span {
+            background-color: #33f;
+            /* width: 40px; */
+            height: 20px;
+            /* 不设置宽度，平均分成三等分 */
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+<!-- flex(flexible box 弹性布局) 用来为盒子模型提供最大的灵活性，任一个容器都可以指定flex布局 -->
+<!-- 当父盒子为flex布局后，子元素的float、clear、vertical-align属性失效 -->
+<!-- flex布局也叫伸缩布局、弹性布局、伸缩盒布局 -->
+
+<!-- flex常用布局属性 -->
+<!-- flex-direction:设置主轴方向 -->
+<!-- justify-content:设置主轴上的子元素排列方式 -->
+<!-- flex-wrap:设置子元素是否换行 -->
+<!-- align-items:设置侧轴上的子元素排列方式(单行) -->
+<!-- align-content:设置侧轴上的子元素排列方式(多行) -->
+<!-- flex-flow: row wrap;复合属性,同时设置主轴方向和是否换行 -->
+
+</html>

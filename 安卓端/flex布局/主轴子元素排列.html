@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            background-color: #3f3;
+            /* 默认是row（X轴)排列 */
+            /* flex-direction: row; */
+            flex-direction: column;
+
+            /* 设置主轴上子元素的排列方式 */
+            /* 1.默认是从左往右 */
+            /* justify-content: flex-start; */
+
+            /* 2.从右往左 */
+            /* justify-content: flex-end; */
+
+            /* 3.子元素居中对齐 */
+            /* justify-content: center; */
+
+            /* 4.平分剩余空间 */
+            justify-content: space-around;
+
+            /* 5.先两边贴边，再平分剩余空间(重要) */
+            /* justify-content: space-between; */
+
+            /* 6.项目与项目之间，间距相等(重要) */
+            /* justify-content: space-evenly; */
+        }
+
+        div span {
+            width: 120px;
+            height: 90px;
+            background-color: #33f;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</body>
+
+</html>

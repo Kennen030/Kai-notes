@@ -1,0 +1,228 @@
+body {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #666;
+    line-height: 1.5;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* 元素点击完后不要高亮显示 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    /* 取消移动端上的 按钮 输入框 的自定义样式 */
+    -webkit-appearance: none;
+}
+
+img,
+a {
+    /* 取消长按页面时的弹出菜单 */
+    -webkit-touch-callout: none;
+}
+
+img {
+    /* 也能去除图片空白缝隙 */
+    vertical-align: middle;
+}
+
+/* 最顶部 */
+.appopen {
+    height: 45px;
+}
+
+.appopen ul li {
+    float: left;
+    height: 45px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+}
+
+.appopen ul li:nth-child(1) {
+    width: 8%;
+}
+
+.appopen ul li:nth-child(1) img {
+    width: 10px;
+}
+
+.appopen ul li:nth-child(2) {
+    width: 10%;
+}
+
+.appopen ul li:nth-child(2) img {
+    width: 30px;
+}
+
+.appopen ul li:nth-child(3) {
+    width: 57%;
+}
+
+.appopen ul li:nth-child(4) {
+    width: 25%;
+    background-color: #f63515;
+}
+
+/* 搜索栏 */
+
+.search-wrap {
+    /* 固定定位不占位置，一定要给宽度 */
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 44px;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+.search-wrap .search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search-wrap .search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    color: #fff;
+    line-height: 44px;
+}
+
+.search {
+    position: relative;
+    height: 30px;
+    background-color: rgb(255, 213, 255);
+    margin: 7px 50px;
+    border-radius: 22px;
+}
+
+.search .jd-icon {
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background: url(../images/jd.png) no-repeat;
+    background-size: 20px 15px;
+}
+
+.jd-icon::after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #ff6161;
+}
+
+.sou-icon {
+    position: absolute;
+    top: 8px;
+    left: 45px;
+    width: 18px;
+    height: 15px;
+    background-color: #ff8181;
+    /* 缩放精灵图之后在根据大小测量坐标 */
+    background: url(../images/jd-sprites.png) no-repeat -82px 0;
+    /* background-size 里写的是缩放后的宽度 */
+    background-size: 199px auto;
+}
+
+/* 内容 */
+.main-content .slider img {
+    width: 100%;
+}
+
+.brand {
+    /* 父盒子给了圆角，不让子盒子里面的东西溢出来 */
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    transform: translate(0, -12px);
+}
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+/* nav模块 */
+
+nav {
+    overflow: hidden;
+    width: 100%;
+}
+
+nav a {
+    overflow: auto;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px auto;
+}
+
+nav a span {
+    display: block;
+}
+
+/* 新闻快报 */
+
+.news {
+    margin-top: 30px;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news a img {
+    width: 100%;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+/* n+2 就是从第二格开始数 */
+.news a:nth-child(n+2) {
+    width: 25%;
+    border-left: 1px solid #ccc;
+}
