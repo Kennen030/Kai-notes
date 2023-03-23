@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,
+        .box2 {
+            width: 400px;
+            height: 300px;
+            background-color: rgb(255, 115, 115);
+            float: left;
+        }
+
+        .big {
+            border: 1px solid;
+            width: 1200px;
+            margin: 0px auto;
+        }
+
+        .clear {
+            clear: both;
+            /* 而外标签清除浮动 */
+            /* 必须是块元素调用 */
+        }
+
+        .footer {
+            height: 300px;
+            background-color: rgb(71, 112, 248);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="clear"></div>
+        <!-- 块元素调用浮动 -->
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框border</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            /* border-width: 50px;
+            border-color: pink;
+            border-style: solid; */
+            border-top: 3px pink solid;
+            border-left: 3px dashed rgb(228, 145, 145);
+            border-bottom: 3px solid rgb(211, 59, 59);
+            border-right: 3px dashed rgb(241, 88, 88);
+        }
+
+        /* 上边为绿色，其他都是蓝色；可以写成全部蓝色，上边绿色（顺序不能错） */
+        div.nav2 {
+            border: 5px solid rgb(25, 87, 158);
+            border-top: rgb(58, 255, 189);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div class="nav2"></div>
+</body>
+<!-- 边框粗细：border-width -->
+<!-- 边框样式：border-style -->
+<!-- 边框颜色：border-color -->
+
+</html>

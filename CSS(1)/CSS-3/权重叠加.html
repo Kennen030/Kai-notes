@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>权重叠加</title>
+    <style>
+        /* li权重0.0.0.1 */
+        li {
+            color: green;
+        }
+
+        /* ul li权重：0.0.0.1叠加0.0.0.1 = 0.0.0.2 */
+        ul li {
+            color: pink;
+        }
+
+        /* .nav li权重：0.0.1.0叠加0.0.0.1 = 0.0.1.1 */
+        .nav li {
+            color: red;
+        }
+
+        /* .skyblue权重：0.0.1.0 */
+        /* 所以此时还是红色，字体是加粗 */
+        .skyblue {
+            color: skyblue;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="skyblue">唱歌</li>
+        <li>跳舞</li>
+        <li>Rap</li>
+    </ul>
+</body>
+
+</html>

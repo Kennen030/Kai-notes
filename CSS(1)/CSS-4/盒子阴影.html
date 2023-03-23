@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子阴影</title>
+    <style>
+        div.box1 {
+            height: 300px;
+            width: 200px;
+            background-color: pink;
+            border-radius: 20%;
+            box-shadow: 10px 10px 10px 10px rgba(36, 36, 36, 0.445);
+            /* 默认外阴影；加数值；inset可以变成内阴影 */
+            /* box-shadow: 10px 10px 10px 10px rgba(36, 36, 36, 0.445) inset; */
+            margin: 100px auto;
+        }
+
+        /* 盒子经过有阴影效果 */
+        div.box2 {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: skyblue;
+        }
+
+        div.box2:hover {
+            box-shadow: 0 5px 16px 1px rgba(0, 0, 0, 0.473);
+        }
+
+        p {
+            font-size: 50px;
+            color: purple;
+            text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.384);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <p>蔡徐坤</p>
+</body>
+<!-- 盒子阴影box-shadow: 10px 10px 10px 10px rgb(36, 36, 36) inset; -->
+<!-- 数值分别是：水平位置 垂直位置 模糊距离 阴影尺寸 颜色 内阴影-->
+
+</html>

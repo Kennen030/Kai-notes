@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #caixukun {
+            color: pink;
+        }
+
+        /* p继承的权重为0 */
+        /* 定义的（元素选择器）大于（继承）的权重，所以显示的是天蓝色 */
+        p {
+            color: skyblue;
+        }
+
+        body {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="caixukun">
+        <p>只因你太美</p>
+    </div>
+    <a href="#">a链接比较特殊，是浏览器默认指定的样式：蓝色 下划线</a>
+</body>
+
+</html>

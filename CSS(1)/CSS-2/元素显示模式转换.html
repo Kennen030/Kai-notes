@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 把行内元素转换成块级元素 */
+        a {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            display: block;
+            text-align: center;
+        }
+
+        /* 把块级元素转换成行内元素 */
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+            display: inline;
+        }
+
+        /* 转换为行内块元素 */
+        span {
+            width: 300px;
+            height: 200px;
+            background-color: skyblue;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">蔡徐坤</a>
+    <a href="#">蔡徐坤</a>
+    <a href="#">蔡徐坤</a>
+    <div>卢本伟</div>
+    <div>卢本伟</div>
+    <div>卢本伟</div>
+    <hr>
+    <span>小猪佩奇</span>
+    <span>小猪佩奇</span>
+    <span>小猪佩奇</span>
+    <span>小猪佩奇</span>
+</body>
+
+</html>

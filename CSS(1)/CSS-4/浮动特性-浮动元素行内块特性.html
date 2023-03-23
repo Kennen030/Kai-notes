@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内块特性</title>
+    <style>
+        span,
+        div {
+            background-color: pink;
+            width: 200px;
+            height: 100px;
+            /* 行内元素定义宽高不会显示，定义浮动后就可以显示 */
+            float: left;
+        }
+
+        p {
+            background-color: purple;
+            height: 300px;
+            float: right;
+            margin-top: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <span>1</span>
+    <span>2</span>
+    <div>3</div>
+    <p>p</p>
+</body>
+
+</html>

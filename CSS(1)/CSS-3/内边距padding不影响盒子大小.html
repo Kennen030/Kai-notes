@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding不影响盒子大小</title>
+    <style>
+        h1 {
+            height: 200px;
+            background-color: rgb(255, 138, 138);
+            padding: 30px;
+        }
+
+        div {
+            background-color: rgb(79, 255, 232);
+            height: 200px;
+            width: 300px;
+        }
+
+        div p {
+            background-color: rgb(60, 89, 255);
+            padding: 30px;
+            /* 子级没有顶宽高，不会音响盒子大小 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>

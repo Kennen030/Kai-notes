@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套元素塌陷</title>
+    <style>
+        .big {
+            margin-top: 100px;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            /* border-top: 1px solid rgba(0, 0, 0, 0); */
+            /* padding: 1px; */
+            overflow: hidden;
+        }
+
+        .little {
+            margin-top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="little"></div>
+    </div>
+</body>
+<!-- 两个嵌套(父子)关系的的块元素,父元有上边距同时,子元素也有上边距,此时父元素会塌陷较大的外边距值 -->
+<!-- 解决方案:1.为父元素定义上边框;2.为父元素定义上内边距;3.为父元素添加:overflow: hidden; -->
+
+</html>

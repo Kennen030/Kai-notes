@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后代选择器</title>
+    <style>
+        ol li {
+            color: pink;
+            /* 选择ol里的li */
+            /* 语法：元素1 元素2（空格隔开） */
+        }
+
+        ol li a {
+            color: red;
+        }
+
+        .nev li p {
+            color: rgb(128, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol的子代</li>
+        <li>我是ol的子代</li>
+        <li>我是ol的子代</li>
+        <li><a href="#">我是li的子代</a></li>
+    </ol>
+    <ul>
+        <li>我是ul的子代</li>
+        <li>我是ul的子代</li>
+        <li>我是ul的子代</li>
+    </ul>
+    <ul class="nev">
+        <li>我是ul的子代</li>
+        <li>我是ul的子代</li>
+        <li>
+            <p>我是ul的子代</p>
+        </li>
+        <li>
+            <p>我是ul的子代</p>
+        </li>
+        <li>
+            <p>我是ul的子代</p>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优先级</title>
+    <style>
+        .nav {
+            color: red;
+        }
+
+        /* （类选择器）>（继承）和（*）；所以此刻为红色字体 */
+
+        div {
+            color: pink !important;
+            /* （!important）是最重要的；所以此刻一定是粉色*/
+        }
+
+        #caixukun {
+            color: green;
+        }
+
+        /* （ID选择器）>（类选择器）；所以此刻为绿色 */
+    </style>
+</head>
+
+<body>
+    <div class="nav" id="caixukun" style="color: purple;">选择器相同，则执行叠层性；选择器不同，则根据优先级执行</div>
+    <!-- （行内样式style）>（ID选择器）；所以此刻为紫色 -->
+</body>
+
+</html>
