@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        const ul = document.querySelector('ul')
+        // 1. 克隆节点： 元素.cloneNode(true)
+        // const li1 = ul.children[0].cloneNode(true)
+        console.log(li1)
+
+        // 2. 追加进去
+        // ul.appendChild(li1)
+
+        // 合并写法
+        // ul.appendChild(ul.children[0].cloneNode(true))
+        ul.appendChild(ul.children[0].cloneNode())  // 如果没加 true，就不会显示里面的内容(浅克隆)
+    </script>
+</body>
+
+</html>

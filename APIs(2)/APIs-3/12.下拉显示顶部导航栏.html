@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="z-index">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="12.下拉显示顶部导航栏.css">
+</head>
+
+<body>
+    <div class="header">我是顶部导航栏</div>
+    <div class="content">
+        <div class="sk">秒杀模块</div>
+    </div>
+    <div class="backtop">
+    </div>
+
+    <!-- (1) 先把头部藏到网页顶部 -80px 的地方 -->
+    <!-- (2) 当网页顶部滚动到 秒杀模块的时候,就显示出顶部导航栏 -->
+    <script>
+        const header = document.querySelector('.header')
+        const sk = document.querySelector('.sk')
+        // 1. 添加页面滚动事件
+        window.addEventListener('scroll', function () {
+            // 2. 当页面头部被卷掉的距离 >= 秒杀模块的头部距离时(offsetTop)
+            const n = document.documentElement.scrollTop    // 获取页面头部卷曲的距离(固定写法)
+            header.style.top = n >= sk.offsetTop ? 0 : '-80px'
+            // if (n >= sk.offsetTop) {
+            //     header.style.top = 0
+            // } else {
+            //     // 3. 出来之后让它回去
+            //     header.style.top = '-80px'
+            // }
+        })
+
+    </script>
+</body>
+
+</html>

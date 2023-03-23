@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 200px;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+    </ul>
+    <script>
+        // 1. 创建节点
+        // const div = document.createElement('div')
+        // console.log(div)
+
+        // 2. 追加节点 (默认作为最后一个子元素)
+        // 父元素.appendChild(要插入的元素)
+        // document.body.appendChild(div)
+
+        const ul = document.querySelector('ul')
+        const li = document.createElement('li')
+        li.innerHTML = 'nihao'
+        // ul.appendChild(li)
+
+        // ul.children[0] ul 伪数组的第一个li
+        // 3. 追加到 某个子元素的前面
+        // 父元素.insertBefore(放哪个元素,放到哪个元素的前面)
+        ul.insertBefore(li, ul.children[0])
+
+    </script>
+</body>
+
+</html>

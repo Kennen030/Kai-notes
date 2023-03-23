@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #686868;
+            margin: 100px;
+        }
+
+        p {
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: #c5fa81;
+            margin: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        const p = document.querySelector('p')
+        // offsetLeft 检测盒子的位置,检测带有定位的父盒子与自己的距离,如果都没有定位,就以网页的左上角为准
+        console.log(div.offsetLeft)     // 108
+        console.log(p.offsetLeft)       // 40
+    </script>
+</body>
+<!-- clientWidth 不包含border -->
+<!-- offsetTop 包含border -->
+
+</html>

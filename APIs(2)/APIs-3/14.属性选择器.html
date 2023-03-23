@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input {
+            color: #fc6b6b;
+        } */
+
+        input[value] {
+            color: #fc6b6b;
+        }
+
+        /* input[type=text] {
+            color: #fc6b6b;
+        } */
+    </style>
+</head>
+
+<body>
+    <input type="text" data-name="nihao" data-id="0" value="12424">
+    <input type="password" name="" id="">
+
+    <script>
+        const input = document.querySelector('input[value]')
+        // 获取到该元素的自定义属性的集合
+        console.log(input.dataset)
+        // 获得自定义属性的 内容
+        console.log(input.dataset.name)
+
+    </script>
+</body>
+
+</html>

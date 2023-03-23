@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            /* width: 200px; */
+            height: 200px;
+            background: #969696;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid #ff1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>12341234</div>
+
+    <script>
+        // clientWidth clientHeight 获取元素的宽和高     返回的是数字型
+        // 包含 padding 以及以内的 元素
+        const div = document.querySelector('div')
+        console.log(div.clientWidth)   // clientWidth 可与获取当前元素的宽度
+        console.log(div.clientHeight)   // 获取当前元素的高
+
+        // resize 浏览器窗口发生大小变化时 会触发的事件
+        window.addEventListener('resize', function () {
+            console.log(1)
+        })
+    </script>
+</body>
+
+</html>

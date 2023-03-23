@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box_G">
+        <div class="box_D">1234
+            <div class="box_B">acb</div>
+        </div>
+    </div>
+    <script>
+        // 1. 父节点 parentNode:返回最近一级的父节点,如果没有则返回 null
+        const box_B = document.querySelector('.box_B')
+        console.log(box_B)      // 返回DOM 对象
+        console.log(box_B.parentNode)   // 返回DOM 对象
+        console.log(box_B.parentNode.parentNode)
+
+    </script>
+</body>
+<!-- DOM节点: DOM树里每一个内容都称之为节点 -->
+<!-- 元素节点: 指的是每一个标签；html是根节点 -->
+<!-- 属性节点：所有的属性，比如 id href -->
+<!-- 文本节点：标签里的内容 -->
+
+</html>

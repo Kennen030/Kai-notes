@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background: #faf61b;
+        }
+
+        .box_1 {
+            width: 400px;
+            height: 400px;
+            background: #f33636;
+        }
+
+        .box_1_1 {
+            width: 300px;
+            height: 300px;
+            background: #0da0b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1">
+            <div class="box_1_1"></div>
+        </div>
+    </div>
+
+    <script>
+        const box = document.querySelector('.box')
+        const box_1 = document.querySelector('.box_1')
+        const box_1_1 = document.querySelector('.box_1_1')
+
+
+        // 1. 事件捕获：从父到子，当一个元素触发事件后，会依次向里调用所有子级元素的同名事件
+        // dom.addEventListener(事件类型，函数，是否使用捕获机制)
+        // document.addEventListener('click', function () {
+        //     alert('最大盒子')
+        // }, true)
+        // box.addEventListener('click', function () {
+        //     alert('爷盒子')
+        // }, true)
+        // box_1.addEventListener('click', function () {
+        //     alert('父盒子')
+        // }, true)
+        // box_1_1.addEventListener('click', function () {
+        //     alert('子盒子')
+        // }, true)
+
+
+        // 2. 事件冒泡:从子到父，当一个元素触发事件后，会依次向上调用所有父级元素的同名事件
+        document.addEventListener('click', function () {
+            alert('最大盒子')
+        })
+        box.addEventListener('click', function () {
+            alert('爷盒子')
+        })
+        box_1.addEventListener('click', function () {
+            alert('父盒子')
+        })
+        box_1_1.addEventListener('click', function () {
+            alert('子盒子')
+        })     // 没写默认就是 false
+    </script>
+</body>
+<!-- 事件流：是事件 完整执行过程中的 流动路径 -->
+<!-- 事件捕获 和 捕获冒泡 就是用来描述事件 执行顺序的模型 -->
+
+</html>

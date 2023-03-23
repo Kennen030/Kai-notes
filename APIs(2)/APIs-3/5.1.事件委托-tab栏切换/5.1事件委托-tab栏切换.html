@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="10.Tab栏切换.css">
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <h3>大标题，h3</h3>
+            <ul>
+                <li><a class="active" data-id="1">物品a</a></li>
+                <li><a data-id="2">物品b</a></li>
+                <li><a data-id="3">物品c</a></li>
+                <li><a data-id="4">物品d</a></li>
+                <li><a data-id="5">物品e</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="item active"><img src="./images/tab00.png" alt="" /></div>
+            <div class="item"><img src="./images/tab01.png" alt="" /></div>
+            <div class="item"><img src="./images/tab02.png" alt="" /></div>
+            <div class="item"><img src="./images/tab03.png" alt="" /></div>
+            <div class="item"><img src="./images/tab04.png" alt="" /></div>
+        </div>
+    </div>
+
+    <script>
+        // 1.获取父元素 ul
+        const ul = document.querySelector('.tab-nav ul')
+        const item = document.querySelectorAll('.tab-content .item')
+        ul.addEventListener('click', function (e) {
+            // 只有点击 ul 里面的 a 才会触发
+            if (e.target.tagName === 'A') {
+                // console.log(e.target)
+
+                // 2.修改 a 标签的active
+                // 2.1先移除 上一个
+                document.querySelector('.tab-nav .active').classList.remove('active')
+                // 2.2 给当前添加
+                e.target.classList.add('active')
+
+                // 3. 下面对应的广告
+                // console.log(e.target.dataset.id)    // 点击对象的 自定义的 名字
+                // 3.1 获取到点击对象的自定义名字
+                const id = +e.target.dataset.id     // 转换成数字型
+                // 3.2 移除原来的 active 的样式
+                document.querySelector('.tab-content .active').classList.remove('active')
+                // 3.3 添加对应盒子的 active
+                // 写法 1
+                // document.querySelector(`.tab-content .item:nth-child(${id})`).classList.add('active')
+                // 写法 2
+                item[id - 1].classList.add('active')
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background: #faf61b;
+        }
+
+        .box_1 {
+            width: 400px;
+            height: 400px;
+            background: #f33636;
+        }
+
+        .box_1_1 {
+            width: 300px;
+            height: 300px;
+            background: #0da0b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1">
+            <div class="box_1_1"></div>
+        </div>
+    </div>
+    <script>
+        // (1) 因为默认就有冒泡，所以容易导致事件影响到父级元素
+        // (2) 把事件限制在当前元素内，就需要阻止事件冒泡
+        // (3) 阻止事件冒泡需要拿到事件对象
+        // 阻断事件流动传播，同时阻止冒泡和捕获
+
+        const box = document.querySelector('.box')
+        const box_1 = document.querySelector('.box_1')
+        const box_1_1 = document.querySelector('.box_1_1')
+        document.addEventListener('click', function () {
+            alert('最大盒子')
+        })
+        box.addEventListener('click', function () {
+            alert('爷盒子')
+        })
+        box_1.addEventListener('click', function () {
+            alert('父盒子')
+        })
+        box_1_1.addEventListener('click', function (e) {
+            alert('子盒子')
+            e.stopPropagation()
+        })     // 没写默认就是 false
+    </script>
+</body>
+<!-- 语法：事件对象.stopPropagation() -->
+
+</html>

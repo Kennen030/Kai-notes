@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <h1>新增学员</h1>
+    <!-- autocomplete="off"：取消搜索框历史信息 -->
+    <form class="info" autocomplete="off">
+        姓名：<input type="text" class="uname" name="uname" />
+        年龄：<input type="text" class="age" name="age" />
+        性别:
+        <select name="gender" class="gender">
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        学号：<input type="text" class="stuN" name="salary" />
+        籍贯：<select name="city" class="city">
+            <option value="Null">----</option>
+            <option value="上海">上海</option>
+            <option value="广州">广州</option>
+            <option value="深圳">深圳</option>
+            <option value="北京">北京</option>
+        </select>
+        <button class="add">录入</button>
+    </form>
+
+    <h1>学生信息</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>学号</th>
+                <th>籍贯</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        // 声明一个空数组，用来增加删除内容
+        const arr = []
+        // 获取表单里的元素
+        const uname = document.querySelector('.uname')
+        const age = document.querySelector('.age')
+        const gender = document.querySelector('.gender')
+        const stuN = document.querySelector('.stuN')
+        const city = document.querySelector('.city')
+        const tbody = document.querySelector('tbody')
+        // 所有带有name属性的元素
+        const items = document.querySelectorAll('[name]')
+
+        //  表单提交
+        // 1. 获取info标签
+        const info = document.querySelector('.info')
+        info.addEventListener('submit', function (e) {
+            // 1.1 阻止默认行为,不让表单跳转
+            e.preventDefault()
+
+            // 放在录入之前执行
+            // 4. 验证表单
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].value === '') {
+                    // 直接返回该函数   不在执行下面的创建
+                    return alert('输入内容不能为空')
+                }
+            }
+
+            // 1.2 创建新的对象 
+            const obj = {
+                stuId: arr.length + 1, // 不用循环，利用数组长度自动自增
+                uname: uname.value,
+                age: age.value,
+                gender: gender.value,
+                stuN: stuN.value,
+                city: city.value
+            }
+            // console.log(obj)
+
+            // 1.2 追加到数组里去
+            arr.push(obj)
+            // console.log(arr)
+
+            // 1.3 重置 表单里的内容
+            this.reset()
+
+            // 2.4 调用该函数
+            render()
+        })
+
+        // 2. 渲染出内容
+        // 2.1 封装渲染函数
+        function render() {
+            // 2.5 每次渲染时 先清空之前的数据
+            tbody.innerHTML = ''
+            // 2.2 遍历数组，动态生成tr
+            for (let i = 0; i < arr.length; i++) {
+                const tr = document.createElement('tr')
+                tr.innerHTML = `
+                        <td>${arr[i].stuId}</td>
+                        <td>${arr[i].uname}</td>
+                        <td>${arr[i].age}</td>
+                        <td>${arr[i].gender}</td>
+                        <td>${arr[i].stuN}</td>
+                        <td>${arr[i].city}</td>
+                        <td>
+                            <a href="javascript:" data-id=${i}>删除</a>
+                        </td>
+                        `
+                // 2.3 追加到 tbody里
+                tbody.appendChild(tr)
+                console.log(arr);
+            }
+        }
+
+        // 3. 删除按钮
+        // 3.1 给 tbody添加事件委托 
+        tbody.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                // 3.2 拿到当前属性的自定义属性的id 并删除
+                // 从当前元素开始删除，删除第一个
+                arr.splice(e.target.dataset.id, 1)
+                console.log(arr)
+
+                // 3.3 删除之后需要重新渲染一次
+                render()
+            }
+        })
+    </script>
+</body>
+
+</html>

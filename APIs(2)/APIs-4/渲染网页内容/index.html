@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渲染网页内容</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="box w">
+        <div class="box-hd">
+            <h3>精品推荐</h3>
+            <a href="#">查看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul class="clearfix">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let data = [
+            {
+                grade: '高级',
+                src: 'images/course01.png',
+                title: 'Think PHP 5.0 博客系统实战项目演练',
+                num: 111
+            },
+            {
+                grade: '中级',
+                src: 'images/course02.png',
+                title: 'Android 网络动态图片加载实战',
+                num: 222
+            },
+            {
+                grade: '中级',
+                src: 'images/course03.png',
+                title: 'Angular2大前端商城实战项目演练',
+                num: 2345
+            },
+            {
+                grade: '高级',
+                src: 'images/course04.png',
+                title: 'AndroidAPP实战项目演练',
+                num: 45634
+            },
+            {
+                grade: '中级',
+                src: 'images/course05.png',
+                title: 'AndroidAPP实战项目演练',
+                num: 111
+            },
+            {
+                grade: '高级',
+                src: 'images/course06.png',
+                title: 'AndroidAPP实战项目演练',
+                num: 111
+            },
+            {
+                grade: '高级',
+                src: 'images/course07.png',
+                title: 'AndroidAPP实战项目演练',
+                num: 111
+            },
+            {
+                grade: '高级',
+                src: 'images/course08.png',
+                title: 'AndroidAPP实战项目演练',
+                num: 111
+            },
+        ]
+
+        const ul = document.querySelector('.clearfix')
+        // 1. 根据数据的个数，创建对应的 li
+        for (let i = 0; i < data.length; i++) {
+            // 1.1 创建新的 li
+            const li = document.createElement('li')
+            // 1.2 把内容放到 li里      // 属性之间记得空格隔开
+            li.innerHTML = `
+                <a href="#">
+                    <img src=${data[i].src} title="${data[i].title}">
+                    <h4>
+                        ${data[i].title}
+                    </h4>
+                    <div class="info">
+                        <span>${data[i].grade}</span> • <span>${data[i].num}</span>人在学习
+                    </div>
+                </a>
+            `
+
+            // 1.3 把li 追加到 ul的里面的最后一位
+            ul.appendChild(li)
+        }
+    </script>
+</body>
+
+</html>

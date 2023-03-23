@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 时间戳 三种方法
+        // 1. getTime() 
+        const time1 = new Date() // 第一种方法必须先拿到 Date
+        console.log(time1.getTime())
+
+        // 2. +new Date()
+        console.log(+new Date())
+
+        // 3. Date.now()
+        console.log(Date.now())  // 只能得到当前的
+
+
+        // 第二种方法返回指定时间戳
+        console.log(+new Date())
+        console.log(+new Date('2023-3-5 18:00:00'))
+
+
+        // 根据日期 Day() 0~6 返回星期几
+        const arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        console.log(`今天是${arr[new Date().getDay()]}`)
+        // 相当于 const date = new Date
+    </script>
+</body>
+<!-- 时间戳 :是指1970年到现在的时间(毫秒数) -->
+<!-- 算法 :将来的时间戳 - 现在的时间戳 = 剩余时间毫秒数-->
+
+</html>

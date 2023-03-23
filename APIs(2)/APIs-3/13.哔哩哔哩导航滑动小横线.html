@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            position: relative;
+            display: flex;
+            width: 500px;
+            height: 50px;
+            margin: 100px auto 0;
+            background: #b4b4b4;
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4,
+        .box5 {
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            flex: 1;
+            background: #49b2f8;
+        }
+
+        .line {
+            transition: all .3s;
+            position: absolute;
+            width: 50px;
+            height: 5px;
+            background: #ff6e6e;
+            bottom: 0;
+            left: 22px;
+            border-radius: 4px;
+        }
+
+        .content1,
+        .content2,
+        .content3,
+        .content4,
+        .content5 {
+            width: 500px;
+            height: 400px;
+            background: #946464;
+            padding: 200px;
+            display: none;
+            margin: 0 auto;
+        }
+
+        .content1 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a class="box1">张1</a>
+        <a class="box2">张2</a>
+        <a class="box3">张3</a>
+        <a class="box4">张4</a>
+        <a class="box5">张5</a>
+        <div class="line"></div>
+    </div>
+    <div class="content1">页面1</div>
+    <div class="content2">页面2</div>
+    <div class="content3">页面3</div>
+    <div class="content4">页面4</div>
+    <div class="content5">页面5</div>
+
+    <script>
+        // (1) 点击导航栏链接 得到当前元素的 offsetLeft 值
+        // (2) 修改 line小横线的 transform值 = 点击导航栏链接的 offsetLeft值
+        // (3) 添加过度效果
+
+        // 1. 给夫元素添加点击事件,点击到子元素是 就可以让事件流返回给父元素
+        const boxSun = document.querySelector('.box')
+        const line = document.querySelector('.line')
+        boxSun.addEventListener('click', function (e) {
+            // 1.1 判断是否点击了 a ,只有点击到 a 才能触发
+            if (e.target.tagName === 'A') {         // 记得要大写
+                // console.log('你好')
+                // console.log(e.target.offsetLeft)    // 点击的元素的 offsetLeft值
+
+                // 2. 移动 line横线的 transform值
+                line.style.transform = `transLateX(${e.target.offsetLeft}px)`
+            }
+        })
+    </script>
+</body>
+
+</html>

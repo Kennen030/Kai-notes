@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        button {
+            margin: 1200px 0 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        // 1. (document.documentElement.scrollTop) 可读取 可修改
+        document.documentElement.scrollTop = 800
+        window.addEventListener('scroll', function () {
+            // 得到的是数字型 不用带单位
+            // 必须写在事件的里面
+            const n = document.documentElement.scrollTop  // 检测页面往上滚动的头部距离
+            console.log(n)
+        })
+
+        // 2.返回顶部
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // 方法1
+            document.documentElement.scrollTop = 0
+
+
+            // 方法2
+            // window.scrollTo(0, 0)
+            // 语法 windou.scrollTo(x轴, y轴)
+        })
+    </script>
+</body>
+
+</html>

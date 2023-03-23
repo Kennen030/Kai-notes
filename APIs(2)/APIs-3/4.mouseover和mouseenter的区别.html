@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background: #faf61b;
+        }
+
+        .box_1 {
+            width: 400px;
+            height: 400px;
+            background: #f33636;
+        }
+
+        .box_1_1 {
+            width: 300px;
+            height: 300px;
+            background: #0da0b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1">
+            <div class="box_1_1"></div>
+        </div>
+    </div>
+    <script>
+        const box = document.querySelector('.box')
+        const box_1 = document.querySelector('.box_1')
+        const box_1_1 = document.querySelector('.box_1_1')
+
+        // 1. mouseover会触发冒泡
+        // box.addEventListener('mouseover', function () {
+        //     console.log('鼠标经过')
+        // })
+        // box_1.addEventListener('mouseout', function () {
+        //     console.log('鼠标离开')
+        // })
+
+        // 2. mouseenter不会触发冒泡
+        box.addEventListener('mouseenter', function () {
+            console.log('鼠标经过')
+        })
+        box_1.addEventListener('mouseleave', function () {
+            console.log('鼠标离开')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            list-style: none;
+        }
+
+        ul li {
+            width: 80px;
+            height: 40px;
+            margin: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>你好1</li>
+        <li>你好2</li>
+        <li>你好3</li>
+        <li>你好4</li>
+        <li>你好5</li>
+        <p>p标签</p>
+    </ul>
+
+    <script>
+        // 点击 li 让当前 li 变成红色
+        // 事件委托，给父元素添加
+        // 1. 获得父元素
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click', function (e) {
+            // console.log('nihao')
+            // console.dir(e)
+            // 获得当前 li
+            console.dir(e.target)   // target(目标) e.target 就是点击的对象
+
+            // 2. 只让 li 变红
+            if (e.target.tagName === 'LI') {        // 'LI'  必须大写
+                e.target.style.color = 'red'
+            }
+            // e.target.tagName 是点击的对象的名字
+            // e.target 是点击的对象
+        })
+    </script>
+</body>
+<!-- 事件委托：是利用事件流的特征，来使子元素冒泡到父元素身上 -->
+<!-- 事件对象.target.tagName -->
+
+</html>

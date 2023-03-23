@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="4.倒计时.css">
+</head>
+
+<body>
+    <div class="countdown">
+        <p class="next">今天是2222年2月22日</p>
+        <p class="title">下班倒计时</p>
+        <p class="clock">
+            <span id="hour">00</span>
+            <i>:</i>
+            <span id="minutes">00</span>
+            <i>:</i>
+            <span id="scond">00</span>
+        </p>
+        <p class="tips">摸鱼中...</p>
+    </div>
+
+    <script>
+        // 随机颜色
+        // 1.先定义一个 随机颜色的函数
+        function getRandomColor(judge = true) {
+            // 3.如果是 true 则返回 #ffffff
+            if (judge) {
+                // (1) 先声明字符串 装 #ffffff 颜色
+                let str = '#'
+                // (2) 声明颜色的数组
+                let arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                // (3) 利用 for循环 循环六次
+                for (let i = 1; i <= 6; i++) {
+                    // (4) 每一次 在数组里面抽取一个
+                    let random = Math.floor(Math.random() * arr.length)     // 得到数组的索引号 0 ~ 15
+                    str += arr[random]
+                }
+                // (5) 返回值 给函数
+                return str
+            }
+        }
+
+        console.log(getRandomColor(true))
+
+        const bgc = document.querySelector('.countdown')
+        bgc.style.backgroundColor = getRandomColor(true)
+
+        // 倒计时
+        // 6. 函数封装 getCountTime
+        function getCountTime() {
+
+            // 1. 现在的时间戳
+            // 添加加号后 就是当前的时间戳
+            const now = +new Date()
+
+            // 没有添加加号就是当前的时间
+            // const now = new Date()
+            // console.log(now)
+
+            // 2. 将来的时间戳
+            const last = +new Date('2023-4-5 20:00:00')
+            // console.log(now, last)
+
+            // 3. 将来减去现在的时间戳  
+            const count = (last - now) / 1000
+            // console.log(count)
+
+            // 4. 转换时间
+            // let d = parseInt(count / 60 / 60 / 24)
+            let h = parseInt(count / 60 / 60 % 24)
+            let m = parseInt(count / 60 % 60)
+            let s = parseInt(count % 60)
+
+            // d < 10 ? d = '0' + d : d
+            h = h < 10 ? h = '0' + h : h
+            m = m < 10 ? m = '0' + m : m
+            s = s < 10 ? s = '0' + s : s
+
+            // console.log(h, m, s,)
+
+            // 5. 替换
+            const hour = document.querySelector('#hour')
+            const minutes = document.querySelector('#minutes')
+            const scond = document.querySelector('#scond')
+
+            hour.innerHTML = h
+            minutes.innerHTML = m
+            scond.innerHTML = s
+        }
+
+        // 先调用一次就不会有间隔
+        getCountTime()
+
+        // 7. 开启定时器
+        setInterval(getCountTime, 1000)
+    </script>
+</body>
+<!-- 选中相同字母快捷键:ctrl + d -->
+
+</html>

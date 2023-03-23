@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #fa7c7c;
+            margin: 100px auto;
+        }
+
+        .box_1 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 5px;
+            top: 5px;
+            background-color: #50f33b;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1"></div>
+    </div>
+    <div class="box">
+        <div class="box_1"></div>
+    </div>
+    <div class="box">
+        <div class="box_1"></div>
+    </div>
+
+    <script>
+        // 用父节点关闭广告
+        // const box_1 = document.querySelector('.box_1')
+        // box_1.addEventListener('click', function () {
+        //     // 直接关闭该元素的父节点
+        //     this.parentNode.style.display = 'none'
+        // })
+
+        // 1.关闭当前广告
+        const btn = document.querySelectorAll('.box_1')
+        for (let i = 0; i <= btn.length; i++) {
+            btn[i].addEventListener('click', function () {
+                this.parentNode.style.display = 'none'
+            })
+        }
+    </script>
+</body>
+<!-- 父节点 parentNode:返回最近一级的父节点，如果没有则返回 null -->
+
+</html>

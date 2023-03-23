@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 90px;
+            border: 3px solid #ccc;
+            line-height: 90px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 方法 1
+        // const div = document.querySelector('div')
+        // function getMyDate() {
+        //     const date = new Date()
+        //     let h = date.getHours()
+        //     let m = date.getMinutes()
+        //     let s = date.getSeconds()
+        //     h = h < 10 ? '0' + h : h
+        //     m = m < 10 ? '0' + m : m
+        //     s = s < 10 ? '0' + s : s
+        //     return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${h}:${m}:${s}`
+        // }
+
+        // // 直接用计时器，刷新 一秒后才会显示内容，所以在外面先放一个
+        // div.innerHTML = getMyDate()
+        // setInterval(function () {
+        //     div.innerHTML = getMyDate()
+        // }, 1000)
+
+        // 方法 2
+        const div = document.querySelector('div')
+        // // 直接用计时器，刷新 一秒后才会显示内容，所以在外面先放一个
+        const date = new Date()
+        div.innerHTML = date.toLocaleTimeString()
+        function time() {
+            const date = new Date()
+            div.innerHTML = date.toLocaleTimeString()
+        }
+        setInterval(function () {
+            // const date = new Date()
+            // div.innerHTML = date.toLocaleString()   // 2022/3/5 16:15:33
+            // div.innerHTML = date.toLocaleDateString()  // 2022/3/5
+            // div.innerHTML = date.toLocaleTimeString()   // 16:18:28
+            time()
+        }, 1000)
+    </script>
+</body>
+
+</html>
