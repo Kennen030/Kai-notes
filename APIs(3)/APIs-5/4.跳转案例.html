@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.bilibili.com/">注册成功,<span>3</span>秒后跳转到主页</a>
+    <script>
+        // 1. 获取到 a
+        const a = document.querySelector('a')
+        // 2. 开启定时器
+        // 3. 声明倒计时变量
+        let num = 3
+        let timeId1 = setInterval(function () {
+            num--
+            // a.innerHTML = `注册成功,<span>${num}</span>秒后跳转到主页`
+            a.children[0].innerHTML = num
+            // 到 0 之后停止,并且完成跳转
+            if (num === 0) {
+                clearInterval(timeId1)
+                // 4. 跳转
+                location.href = a.href
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>

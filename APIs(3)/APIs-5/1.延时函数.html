@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: fixed;
+            width: 200px;
+            height: 100px;
+            background: #fd9f9f;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        const div = document.querySelector('div')
+        // 1. 延时函数
+        setTimeout(function () {
+            // console.log('nihao')
+            div.style.display = 'none'
+        }, 3000)
+
+        // 2. 间歇函数
+        setInterval(function () {
+            console.log('qwq')
+        }, 3000)
+    </script>
+</body>
+<!-- setTimeout延时函数：让代码延迟几秒执行函数(执行一次) -->
+<!-- setInterval间歇函数:让代码每过几秒执行一次函数 -->
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(1)  // 同步
+        console.log(2)  // 同步
+        setTimeout(function () {
+            console.log(3)  // 异步,跟时间有关的都会放到异步里
+        }, 0)
+        console.log(4)  // 同步
+
+        // 结果 1 2 4 3
+    </script>
+</body>
+<!-- 事件循环(event loop) -->
+<!-- 1.执行时js代码分为两种类型，同步和异步 -->
+<!-- 2.只有同步里的代码全部执行完后才会执行异步的代码 -->
+
+</html>

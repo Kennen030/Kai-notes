@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            vertical-align: middle;
+            line-height: 30px;
+            padding-left: 20px;
+        }
+
+        .error {
+            color: #f14538;
+        }
+
+        .right {
+            color: #44ec6e;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id=""><span></span>
+
+    <script>
+        // 字母 a-z 包括大小写，数字0-9，有下划线，6位数字以上不能超过 18位
+
+        // 1. 正则表达式
+        const reg = /^[a-zA-Z0-9-_]{6,18}$/
+
+        // 2. 获取表单添加事件
+        const input = document.querySelector('input')
+        const span = document.querySelector('span')
+        input.addEventListener('blur', function () {
+            // 检测 用户输入的内容，是否符合 reg的规范
+            if (reg.test(this.value)) {
+                // input.nextElementSibling.innerHTML = '输入正确'     // input 的下一个兄弟元素的内容
+                span.innerHTML = '输入正确'
+                // span.classList.add('right')
+                span.className('right')
+            } else {
+                // console.log('请输入6~16位的英文数字下划线')
+
+                span.innerHTML = '请输入6~16位的英文数字下划线'
+                // span.classList.add('error')
+                span.className('error')
+            }
+            // 用 className 会覆盖类名，就不会同时添加两个类
+        })
+    </script>
+</body>
+<!-- 1. 表单失去焦点就开始判断 -->
+<!-- 2. 如果是正确的就调用正确的类名，否则调用错误类名 -->
+
+</html>

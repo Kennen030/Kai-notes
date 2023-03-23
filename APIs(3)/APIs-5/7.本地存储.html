@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 增    localStorage.setItem('键','值')
+        localStorage.setItem('uname', '蔡徐坤')
+
+        // 2. 查  .getItem('键')
+        console.log(localStorage.getItem('uname'))
+
+        // 3. 删    .removeItem('键')
+        // localStorage.removeItem('uname')
+
+        // 4. 改    没有就增，有就是改
+        localStorage.setItem('uname', '只因你太美')
+
+    </script>
+</body>
+<!-- localStorage 把数据永久存储在本地用户里,除非手动删除,否则关闭页面也会存在 -->
+<!-- 本地存储只能储存字符串 -->
+
+<!-- sessionStorage 本地存储分类，关闭浏览器会消失-->
+
+</html>

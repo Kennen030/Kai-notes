@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 正则修饰符
+        // /表达式/修饰符：i(不区分大小写)、g(全局查找)
+        console.log(/^java$/.test('java'))      // true
+        console.log(/^java$/i.test('JAVA'))     // true
+        console.log(/^java$/i.test('Java'))     // true
+
+        // 2.替换 replace
+        const str = '你好你好cai好你好你好你好你好CAI'
+        // const newStr = str.replace(/cai/, '只因你太美') //只会替换掉一个
+        // const newStr = str.replace(/cai|CAI/g, '只因你太美')     // g全局替换
+        const newStr = str.replace(/cai/ig, '只因你太美')     // ig全局替换，并且不区分大小写
+        console.log(newStr)     
+    </script>
+</body>
+
+</html>

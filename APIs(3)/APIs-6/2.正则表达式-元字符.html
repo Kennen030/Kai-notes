@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 边界符号 (^ 以什么开头)  ($ 以什么结尾)
+        console.log(/哈/.test('哈'))            // true
+        console.log(/哈/.test('哈哈'))          // true
+        console.log(/哈/.test('二哈'))          // true
+        console.log(/^哈/.test('哈'))           // true
+        console.log(/^哈/.test('哈哈'))         // true
+        console.log(/^哈/.test('二哈'))         // flase
+        console.log(/^哈$/.test('哈'))          // true  精确匹配，有开头和结尾会确认数量
+        console.log(/^哈$/.test('哈哈'))        // false
+        console.log(/^哈$/.test('二哈'))        // false
+
+        // 2. 量词 (* 重复零次或者更多次) (+ 重复一次或者更多次) (? 重复零次或一次)
+        //  量词 * (>= 0 次)
+        console.log(/^哈$/.test('哈'))           // true
+        console.log(/^哈*$/.test(''))            // true
+        console.log(/^哈*$/.test('哈'))          // true
+        console.log(/^哈*$/.test('哈哈'))        // true
+        console.log(/^哈*$/.test('二哈很傻'))    //  false
+        console.log(/^哈*$/.test('哈很傻'))      //  false
+        console.log(/^哈*$/.test('哈很哈'))      // false
+
+        //  量词 + (>= 1 次)    (1,]
+        console.log(/^哈$/.test('哈')) // true
+        console.log(/^哈+$/.test('')) // false
+        console.log(/^哈+$/.test('哈')) // true
+        console.log(/^哈+$/.test('哈哈')) // true
+        console.log(/^哈+$/.test('二哈很傻')) //  false
+        console.log(/^哈+$/.test('哈很傻')) //  false
+        console.log(/^哈+$/.test('哈很哈')) // false
+
+        //  量词 ? (0次 || 1次)
+        console.log(/^哈?$/.test('')) // true
+        console.log(/^哈?$/.test('哈')) // true
+        console.log(/^哈?$/.test('哈哈')) // true
+        console.log(/^哈?$/.test('二哈很傻')) //  false
+        console.log(/^哈?$/.test('哈很傻')) //  false
+        console.log(/^哈?$/.test('哈很哈')) // false
+
+
+        // 量词 {n} 写几，就必须出现几次
+        console.log(/^哈{4}$/.test('哈'))           // false
+        console.log(/^哈{4}$/.test('哈哈'))         // false
+        console.log(/^哈{4}$/.test('哈哈哈'))       // false
+        console.log(/^哈{4}$/.test('哈哈哈哈'))
+        console.log(/^哈{4}$/.test('哈哈哈哈哈'))   // false
+        console.log(/^哈{4}$/.test('哈哈哈哈哈哈')) // false
+        // 量词 {n,}   (>= n)
+        console.log(/^哈{4,}$/.test('哈'))          // false
+        console.log(/^哈{4,}$/.test('哈哈'))        // false
+        console.log(/^哈{4,}$/.test('哈哈哈'))      // false
+        console.log(/^哈{4,}$/.test('哈哈哈哈'))
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈'))
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈哈'))
+        // 量词 {n,m}  逗号左右两侧千万不能有空格  (>=n && <= m)
+        console.log(/^哈{4,6}$/.test('哈'))         // false
+        console.log(/^哈{4,6}$/.test('哈哈'))       // false
+        console.log(/^哈{4,6}$/.test('哈哈哈'))     // false
+        console.log(/^哈{4,6}$/.test('哈哈哈哈'))
+        console.log(/^哈{4,6}$/.test('哈哈哈哈哈'))
+        console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈'))
+        console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈哈')) // false
+
+
+        // 字符类   [abc] 选其中任何一个  但是只能有一个
+        console.log(/^[abc]$/.test('a'))  // true
+        console.log(/^[abc]$/.test('b'))  // true
+        console.log(/^[abc]$/.test('c'))  // true
+        console.log(/^[abc]$/.test('ab'))  // false
+        console.log(/^[abc]{2}$/.test('ab'))  // true  // 选两个
+        // 字符类   [a-z]  只选其中一个  区分大小写
+        console.log(/^[A-Z]$/.test('p'))  // false
+        console.log(/^[A-Z]$/.test('P'))  // true
+        console.log(/^[0-9]$/.test(2))  // true
+        console.log(/^[a-zA-Z0-9]$/.test(2))  // true
+        console.log(/^[a-zA-Z0-9]$/.test('p'))  // true
+        console.log(/^[a-zA-Z0-9]$/.test('P'))  // true
+
+        // 字符类取反 [^a-z]  不能有 a-z
+        console.log(/[^a-z]$/.test('P'))  // true
+        // 写到 [] 里面的就是取反
+
+        // 字符类 .(点) 不能换行
+
+
+        // 字符类 预定义类 \d a-z  \w 0-9
+        // 日期：年-月-日
+        console.log(/^\d{4}-\d{1,2}-\d{1,2}/)
+        // 年(4位)-月(1到两位)-日(1到两位)
+
+
+        // 10000 以上
+        console.log(/^[1-9][0-9]{4,}/.test('10000'))    // true
+        console.log(/^[1-9][0-9]{4,}/.test('1000'))
+        // 第一个数字是 1-9 ，第二个数字是 0-9，离大括号最近的 0-9 数字在 4个以上
+    </script>
+</body>
+<!-- 元字符分为三大类 -->
+<!-- 1. 边界符：表示位置，开头和结尾 -->
+<!-- 2. 量词：表示重复次数 -->
+<!-- 3. 字符类：\d 就表示 0~9 -->
+
+</html>

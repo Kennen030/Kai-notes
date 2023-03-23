@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const obj = {
+            uname: '蔡徐坤',
+            age: 18,
+            gender: '女'
+        }
+        // 存储复杂数据类型
+        // localStorage.setItem('obj', obj)    // 无法直接使用
+        // 取
+        // console.log(localStorage.getItem('obj'))
+
+
+        // 1. 复杂数据类型存储转为 JSON字符串存储
+        localStorage.setItem('obj', JSON.stringify(obj))
+
+        // console.log(localStorage.getItem('obj'))
+
+        // 2. 把 JSON字符串转换为对象   // 数组也是一样的方法
+        const str = localStorage.getItem('obj')
+        // console.log(obj)
+        console.log(JSON.parse(str))
+        // console.log(JSON.parse('str'))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. map方法遍历数组
+        const arr = ['a', 'b', 'c', 'd']
+        const newArr = arr.map(function (items, index) {
+            // console.log(items)  // 等价于 arr[i]
+            // console.log(index)  // 索引号
+
+            return items + '学生'
+        })
+        // 生成了一个新数组
+        console.log(newArr)
+
+        // 案例
+        const arr1 = [10, 20, 30, 40]
+        const newArr1 = arr1.map(function (items) {
+            return items + 5
+        })
+        console.log(newArr1)
+
+        // 2. join() 把数组里的内容变为字符串
+        console.log(arr.join(''))   // abcd
+        console.log(arr.join('-'))  // a-b-c-d
+        console.log(arr.join())     // a,b,c,d
+    </script>
+</body>
+<!-- map的最好方法是用来处理里面的数据 -->
+
+</html>

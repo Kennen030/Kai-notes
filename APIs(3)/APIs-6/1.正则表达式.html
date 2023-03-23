@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const str = '张一，张二，张三，张四，张五，张六，张七，张八'
+
+        // 1. 定于正则表达式规则  const 变量名 = /表达式/
+        const rule = /张四/
+        const rule1 = /蔡徐坤/
+        // 2. 检擦是否匹配   变量名.test('被检测的字符串')
+        console.log(rule.test(str))     // true
+        console.log(rule1.test(str))    // false
+        // 3. exec()     // 返回的是数组
+        console.log(rule.exec(str))     
+    </script>
+</body>
+
+</html>

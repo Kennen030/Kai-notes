@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <h1>新增学员</h1>
+    <!-- autocomplete="off"：取消搜索框历史信息 -->
+    <form class="info" autocomplete="off">
+        姓名：<input type="text" class="uname" name="uname" />
+        年龄：<input type="text" class="age" name="age" />
+        性别:
+        <select name="gender" class="gender">
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        电话：<input type="text" class="stuN" name="salary" />
+        籍贯：<select name="city" class="city">
+            <option value="Null">----</option>
+            <option value="上海">上海</option>
+            <option value="广州">广州</option>
+            <option value="深圳">深圳</option>
+            <option value="北京">北京</option>
+        </select>
+        <button class="add">录入</button>
+    </form>
+
+    <h1>学生信息</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>电话</th>
+                <th>籍贯</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>stuId</td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <script>
+        const tbody = document.querySelector('tbody')
+        // 1. 读取本地存储的数据
+        const data = localStorage.getItem('student-data')
+        // console.log(data)// null
+
+        // 2. 如果有就返回对象，没有就声明一个空的数组
+        const arr = data ? JSON.parse(data) : []
+        // console.log(arr)
+        // const arr = [
+        //     {
+        //         stuId: 1001,
+        //         uname: '蔡徐坤',
+        //         age: 19,
+        //         gender: '男',
+        //         tel: '110',
+        //         city: '上海',
+        //     },
+        //     {
+        //         stuId: 1001,
+        //         uname: '蔡徐坤',
+        //         age: 19,
+        //         gender: '男',
+        //         tel: '110',
+        //         city: '上海',
+        //     }
+        // ]
+
+        // 3. 渲染函数
+        function render() {
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].stuId = i + 1
+            }
+            // 3.1 有几个对象就生成几个tr
+            const trArr = arr.map(function (item, index) {
+                // console.log(item)
+                // 拿到 stuId
+                // console.log(item.stuId)
+
+                return `
+                <tr>
+                    <td>${item.stuId}</td>
+                    <td>${item.uname}</td>
+                    <td>${item.age}</td>
+                    <td>${item.gender}</td>
+                    <td>${item.salary}</td>
+                    <td>${item.city}</td>
+                    <td>
+                      <a href="javascript:" data-id=${index}>删除</a>
+                    </td>
+                </tr> 
+                `
+            })
+            // console.log(trArr)
+
+            // 3.2 追加到tbody里面
+            // trArr 里面是数组，需要转换为字符串
+            tbody.innerHTML = trArr.join('')
+
+        }
+        render()
+
+        // 4. 录入 
+        const info = document.querySelector('.info')
+        // 4.1 只获取 form表单里的有 name属性的元素
+        const items = info.querySelectorAll('[name]')
+        // console.log(items)
+        info.addEventListener('submit', function (e) {
+            // 4.2 阻止button提交
+            e.preventDefault()
+
+            // 4.4 声明一个对象，用来装用户输入的值
+            const obj = {}
+
+            // 用循环的方式 写入id 号
+            for (let i = 0; i < arr.length; i++) {
+                // arr[i].stuId = i + 1
+                obj.stuId = i + 1
+            }
+
+            // 因为需要作判断，所以这里用for
+            for (let i = 0; i < items.length; i++) {
+
+                // console.log(items)      // 数组；里面包含五个form里的元素
+                // console.log(items[i])   // 拿到每一个form里的元素
+                // console.log(items[i].name)  // 每一个元素的属性
+                // 把 items简写成 item
+                const item = items[i]   // form表单里的里的元素
+                // console.log(item)
+
+                // 4.3 判断 表格里的内容不能为空
+                if (items[i].value === '') {
+                    return alert('内容不能为空')
+                }
+
+                // 4.5 把的 用户的值放到 对象里面
+                // console.log(item.name)  // uname age gender
+                obj[item.name] = item.value   // 重点(1)
+                // 意思就是 obj{uname: uname.value}
+            }
+            // console.log(obj)
+
+            // 5. 对象追加到数组里去
+            arr.push(obj)
+
+            // 6. 存储到本地
+            localStorage.setItem('student-data', JSON.stringify(arr))
+
+            // 7. 渲染页面
+            render()
+
+            // 8. 重置表单，下次输入就不会把上次输入的放进去了
+            this.reset()
+
+
+        })
+
+        // 9. 删除模块 
+        // 9.1 给渲染出来的表格添加点击事件
+        tbody.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                // alert(1)
+                // 9.2 利用自定义id去拿到
+                // console.log(e.target.dataset.id)
+                arr.splice(e.target.dataset.id, 1)
+                // 9.3 再把删除后的数据写道本地存储里面
+                localStorage.setItem('student-data', JSON.stringify(arr))
+                // 9.4 再次渲染
+                render()
+            }
+        })
+        console.log(arr)
+
+    </script>
+    <!-- 重点(1)
+    const obj1 = {
+        uname: 'cai'
+    }
+    obj.uname 得到的是 'cai'
+    obj['uname'] 得到的也是 'cai'
+    console.log(obj1['uname'])
+     -->
+</body>
+
+</html>
