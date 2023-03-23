@@ -1,0 +1,24 @@
+.header {
+    width: 200px;
+    height: 200px;
+    background: #aaaaaa;
+
+    a {
+        color: #da2828;
+
+        // 选择器 在:hover 前面加 & 符号
+        &:hover {
+            color: #3effb5;
+        }
+
+        &::after {
+            content: '我是伪元素';
+        }
+    }
+}
+
+.nav {
+    .logo {
+        color: #5739db;
+    }
+}

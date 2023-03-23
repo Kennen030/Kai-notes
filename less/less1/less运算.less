@@ -1,0 +1,25 @@
+@basefont: 50px;
+
+html {
+    // font-size: 50px;
+    font-size: @basefont;
+}
+
+// 加号也要用空格隔开
+// 记得加括号
+@10px: (10px + 15);
+@pink: pink;
+
+div {
+    width: (200px - 100);
+    height: (200px * 2);
+    border: @10px solid #ccc;
+}
+
+// 1.如果两个数参与运算，只有一个有单位，则结果就以这个单位为准
+// 2.如国两个都有单位，则以第一个的单位为准
+.nav {
+    width: (82rem / @basefont );
+    height: (82 / 50rem);
+    background: @pink;
+}
