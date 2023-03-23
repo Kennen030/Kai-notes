@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单元素</title>
+</head>
+<body>
+    <form action="xxx.php" method="get">
+        用户名：<input type="text" name="user" placeholder="请输入用户名：最多20位" maxlength="20"/><br>
+        <!-- 文本框 -->
+        密码：<input type="password" name="pwd" placeholder="请输入密码：最多8位" maxlength="8"/><br>
+        <!-- 密码框 -->
+        <!-- placeholder是文本提示内容；maxlength是字符最大长度 -->
+        性别：男<input type="radio" name="sex" value="male"/> 女<input type="radio" name="sex" value="female"/>外星人<input type="radio" name="sex" value="alien" checked="checked"/><br>
+        <!-- 单选框 -->
+        爱好：唱<input type="checkbox" name="hobby" value="sing" checked="checked"/>跳<input type="checkbox" name="hobby" value="dance" checked="checked"/>Rap<input type="checkbox" name="hobby" value="rap" checked="checked"/>篮球<input type="checkbox" name="nobby" value="basketball"/><br>
+        <!-- 多选框 -->
+        出生年份<select name="age">
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+        </select><br>
+        <!-- 下拉列表 -->
+        最喜欢什么水果<select name="fruit">
+            <option value="orange">橙子</option>
+            <option value="watermelon">西瓜</option>
+            <option value="banana">香蕉</option>
+            <option value="apple">苹果</option>
+            <option value="peach" selected>桃子</option>
+        </select><br>
+        <!-- 下拉列表（预选）selected是预选元素 -->
+        <textarea rows="5" cols="30">这就是文本域</textarea><br>
+        <!-- 文本域 -->
+        <input type="submit" value="注册账号"/>
+        <!-- 提交按钮：submit；把form里的表单元素里面的值全部提交上去 -->
+        <input type="reset" value="重新输入"/>
+        <!-- 重置按钮：reset；把from里的值重置 -->
+        <input type="button" value="获取验证码"/><br>
+        <!-- 普通按钮：button；结合js搭配使用 -->
+        上传图片<input type="file"/>
+        <!-- 文件域：file；上传文件使用 -->
+    </form>
+    <hr>
+    <form action="">
+        请输入191开头的电话号码<input type="text" name="user" value="191" maxlength="20"/><br>
+        <!-- 文本款里放默认文字 -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.h1 {
+    font-weight: 400;
+    text-align: center;
+}
+.gray {
+    color: rgb(194, 194, 194);
+    font-size: 12px;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+.search {
+    width: 160px;
+}
+.btn{
+    font-weight: 700;
+}
+p {
+    text-indent: 2em;
+}
+.pic {
+    text-align: center;
+}
+.footer {
+    color: rgb(122, 122, 122);
+    font-size: 12px;
+}
