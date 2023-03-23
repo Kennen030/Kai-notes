@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 56px;
+            height: 56px;
+            /* background-color: pink; */
+            margin: 100px auto;
+            background: url(images/sprites.png) no-repeat -184px 0;
+            /* background-position: -184px 0; */
+        }
+
+        .box2 {
+            width: 27px;
+            height: 30px;
+            margin: 0 auto;
+            background: url(images/sprites.png) no-repeat 0 -182px;
+        }
+
+        .box3 {
+            width: 23px;
+            height: 23px;
+            margin: 0 auto;
+            background: url(images/sprites.png) no-repeat -157px -107px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 精灵技术主要针对于背景图片使用，就是把多个小背景图片整合到一张大图片中 -->
+    <!-- 2. 移动背景图片位置，可以使用 background-position -->
+    <!-- 3. 移动的距离就是这个目标图片的 x 和 y 的坐标 -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

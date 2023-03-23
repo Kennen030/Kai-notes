@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:first-of-type {
+            background-color: #ccc;
+        }
+
+        ul li:last-of-type {
+            background-color: #ccc;
+        }
+
+        ul li:nth-of-type(3) {
+            background-color: #ccc;
+        }
+
+        ul li:nth-of-type(2n) {
+            background-color: rgb(255, 106, 106);
+        }
+
+        /* nth-child 会把 所有盒子 都排列序列号 */
+        /* 执行的时候首先看 后面的的nth-child(1)部分 再去看前面的 div */
+        /* 因为第一个div的序号是 2， 它要找的是 序号1 所以这里就而外空了一行 */
+        section div:nth-child(1) {
+            background-color: rgb(241, 20, 20);
+        }
+
+        /* nth-of-type 会把 指定盒子 排列序列号 */
+        /* 执行的时候首先看 前面指定的div的元素 再去看后面的 nth-of-type(1) */
+        section div:nth-of-type(1) {
+            background-color: rgb(241, 20, 20);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1行</li>
+        <li>我是第2行</li>
+        <li>我是第3行</li>
+        <li>我是第4行</li>
+        <li>我是第5行</li>
+        <li>我是第6行</li>
+        <li>我是第7行</li>
+        <li>我是第8行</li>
+        <li>我是第9行</li>
+    </ul>
+    <!-- 区别 -->
+    <section>
+        <p>qwe</p>
+        <div>123</div>
+        <div>456</div>
+    </section>
+</body>
+
+</html>

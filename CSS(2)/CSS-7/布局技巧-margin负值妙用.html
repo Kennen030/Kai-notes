@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 100px;
+            height: 400px;
+            border: 2px solid rgb(219, 219, 219);
+            margin-left: -1px;
+        }
+
+        /* 1.如果盒子没有定位，则鼠标经过添加 相对定位 即可
+        ul li:hover {
+            position: relative;
+            (相对定位会压住 其他盒子 或者 标准流)
+            border: 1px solid rgb(253, 149, 107);
+        } */
+        /* 2. 利用z-index:提高层级，就不会被遮挡住了 */
+        ul li:hover {
+            z-index: 99;
+            border: 2px solid rgb(253, 149, 107);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

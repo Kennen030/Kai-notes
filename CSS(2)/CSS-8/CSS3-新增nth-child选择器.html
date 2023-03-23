@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 选择所有 偶 数行 */
+        ul li:nth-child(even) {
+            background-color: pink;
+        }
+
+        /* 2. 选择所有 奇 数行 */
+        ul li:nth-child(odd) {
+            background-color: skyblue;
+        }
+
+        /* 3. 从0开始 每次加 1 往后面计算 相当于选择了全部*/
+        ol li:nth-child(n) {
+            background-color: green;
+        }
+
+        /* 4. 2n 相当于每次选择 偶数行 等价于 "even" */
+        /* 2n+1 就相当于奇数 */
+        /* 5n 相当于 5 的倍数 */
+        /* n+5 相当于 从第五个开始选 */
+        /* -n+5 相当 只选前五个(包含第五个) */
+        ol li:nth-child(2n) {
+            background-color: rgb(232, 250, 232);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1行</li>
+        <li>我是第2行</li>
+        <li>我是第3行</li>
+        <li>我是第4行</li>
+        <li>我是第5行</li>
+        <li>我是第6行</li>
+        <li>我是第7行</li>
+        <li>我是第8行</li>
+        <li>我是第9行</li>
+    </ul>
+    <ol>
+        <li>我是第1行</li>
+        <li>我是第2行</li>
+        <li>我是第3行</li>
+        <li>我是第4行</li>
+        <li>我是第5行</li>
+        <li>我是第6行</li>
+        <li>我是第7行</li>
+        <li>我是第8行</li>
+        <li>我是第9行</li>
+    </ol>
+</body>
+<!-- n 是从 0 开始往后叠加的 -->
+
+</html>

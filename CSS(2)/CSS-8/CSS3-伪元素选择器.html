@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* div::before 放在自己元素里的前面 */
+        div::before {
+            display: inline-block;
+            content: '蔡徐坤';
+            /* content: '' 必须写; */
+            width: 50px;
+            height: 100%;
+            /* 本身是行内元素，无法设置宽高 */
+            background-color: #ccc;
+        }
+
+        /* div::after 放在自己元素里的后面 */
+        div::after {
+            content: '鸡';
+        }
+    </style>
+</head>
+
+<body>
+    <div>是</div>
+</body>
+
+</html>

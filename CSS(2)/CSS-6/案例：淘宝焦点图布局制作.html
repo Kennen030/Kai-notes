@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tb-promo {
+            position: relative;
+            margin: 100px auto;
+            width: 520px;
+            height: 280px;
+            background-color: #ff0;
+        }
+
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+
+        .tb-promo a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.685);
+            line-height: 30px;
+            text-align: center;
+
+        }
+
+        .prev {
+            border-radius: 0 15px 15px 0;
+            /* position: absolute; */
+            left: 0;
+            /* top: 50%; */
+            /* margin-top: -15px; */
+            /* width: 20px; */
+            /* height: 30px; */
+            /* background-color: rgba(0, 0, 0, 0.685); */
+            /* line-height: 30px; */
+            /* text-align: center; */
+        }
+
+        .next {
+            border-radius: 15px 0 0 15px;
+            /* position: absolute; */
+            right: 0;
+            /* top: 50%; */
+            /* margin-top: -15px; */
+            /* width: 20px; */
+            /* height: 30px; */
+            /* background-color: rgba(0, 0, 0, 0.685); */
+            /* line-height: 30px; */
+            /* text-align: center; */
+        }
+
+        .promo-nav {
+            border-radius: 6px 6px 6px 6px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background-color: rgba(0, 0, 0, 0.658);
+        }
+
+        .promo-nav li {
+            list-style: none;
+            float: left;
+            margin: 3px;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            background-color: #fff;
+        }
+
+        .promo-nav .selected:hover {
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="images/tb.jpg" alt="">
+        <div class="prev">
+            <a href="#">&lt;
+            </a>
+        </div>
+        <div class="next">
+            <a href="#">
+                &gt;
+            </a>
+        </div>
+        <ul class="promo-nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

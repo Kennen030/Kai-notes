@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 选择了input同时具有value属性的这个元素 */
+        /* input[value] {
+            color: pink;
+        } */
+
+        /* 2. 选择了type="text" 文本框的input选择出来 */
+        input[type="text"] {
+            color: pink;
+        }
+
+        /* 3. 选择 div 然后 具有class属性 并且属性值都是cai开头的元素 */
+        div[class^=cai] {
+            color: skyblue;
+        }
+
+        /* 4. 选择 div 然后 具有class属性 并且属性值都是xk 结尾的元素 */
+        div[class$=xk] {
+            color: green;
+        }
+
+        /* 5. 选择 section 然后 具有class属性 并且属性值都是含有 cxk 的元素 */
+        section[class*=cxk] {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器就可以不用借助与类或者id选择器 -->
+    <!-- <input type="text" value="cao" name="" id="">
+    <input type="text" name="" id=""> -->
+
+    <!-- 2. (重点！)属性选择器还可以选择属性=值的某些元素 -->
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+
+    <!-- 3. 属性选择器可以选择属性值开头的元素 -->
+    <div class="cai1">qwq</div>
+    <div class="cai2">qwq</div>
+    <div class="cai3">wqw</div>
+    <div class="cai4">qwq</div>
+    <div class="">qwq</div>
+
+    <!-- 4. 选择属性值结尾一样的元素 -->
+    <div class="cai1-xk">wewe</div>
+    <div class="cai2-xk">wewe</div>
+    <div class="cai3-xk">wewe</div>
+    <div class="jini">wewe</div>
+
+    <!-- 5. 选择出 属性值里含有 某些值的元素 -->
+    <section class="header-cxk">adf</section>
+    <section class="body-cxk">asdf</section>
+    <section class="footer-cxk">asdf</section>
+    <section class="jinitaimei">asdf</section>
+</body>
+<!-- 1.属性选择器 -->
+<!-- 2.结构伪类选择器 -->
+<!-- 3.伪元素选择器 -->
+
+<!-- 类选择器、属性选择器、伪类选择器，权重都为10 -->
+
+</html>
