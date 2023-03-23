@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: #f4f;
+            /* transform: translateX(X,Y); */
+            /* 1. 移动 x 和 y 轴的位置 */
+            /* transform: translate(100px, 200px); */
+            /* 2. 移动 x 的位置 (X要大写) */
+            /* transform: translateX(100px); */
+        }
+
+        div:first-child {
+            /* margin-top: 100px; */
+            transform: translate(100px, 100px);
+        }
+
+        div:last-child {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+<!-- 移动盒子位置 ： 
+    1. 定位
+    2. 盒子的边距
+    3. 2D转换移动
+-->
+
+<!-- 
+    translate 最大优点，不会影响到其它元素的位置
+ -->
+
+</html>

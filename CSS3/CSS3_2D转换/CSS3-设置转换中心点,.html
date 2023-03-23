@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #0ff;
+            transition: all 0.8s;
+        }
+
+        div:hover {
+            transform: rotate(45deg);
+            /* transform-origin: left right; */
+            /* transform-origin: center center; */
+            /* transform-origin: x y; */
+            transform-origin: left bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+<!-- 语法：transform-origin: x y; -->
+
+</html>
+<!-- x y 用空格隔开 -->
+<!-- x y 默认转换的中心点 是 元素中心点的(50% 50%) -->
+<!-- 可以给 x y 设置像素 或者 方位名词 (top bottom left right center) -->

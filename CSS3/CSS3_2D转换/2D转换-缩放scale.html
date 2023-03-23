@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #8f8;
+            margin: 40px auto;
+            transition: all 0.8s;
+        }
+
+        div:hover {
+            transform-origin: right;
+            /* 宽度变成两倍 */
+            transform: scale(2, 1);
+        }
+
+        div:nth-child(2):hover {
+            /* 高度变成两倍 */
+            transform: scale(1, 2);
+            transform-origin: top;
+            background-color: #f4f;
+        }
+
+        div:nth-child(3):hover {
+            /* 高度变成两倍 */
+            transform: scale(.5);
+            transform-origin: top;
+            background-color: #53b8e0;
+        }
+
+        div:nth-child(4):hover {
+            width: 100px;
+            height: 50px;
+            background-color: #53b8e0;
+            /* 修改宽高的方法：会把下面的内容 挤开。只会往 下 左右延申 */
+            /* scale方法：不会影响其他盒子。可以定义中心点缩放， */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>1234
+    <div></div>1234
+    <div></div>1234
+    <div></div>1234
+</body>
+<!-- 语法：transform:scale(x,y); -->
+
+</html>
+<!-- x,y 用逗号隔开 -->
+<!-- transform:scale(2,2); 宽高放大2倍 -->
+<!-- transform:scale(0.5); 宽高放大2倍 -->
+
+<!-- 优势： -->

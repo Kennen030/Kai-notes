@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #dfdfdd;
+        }
+
+        .father {
+            position: relative;
+            width: 100%;
+            height: 330px;
+            background: url(images/bg1.png) no-repeat;
+            animation: backrun 5s linear infinite;
+            margin-top: 580px;
+            /* 背景图的动画 */
+
+        }
+
+        .one {
+            position: absolute;
+            bottom: 30px;
+            width: 200px;
+            height: 100px;
+            background: url(images/bear.png) no-repeat;
+            animation: run 1s steps(8) infinite, runpos 3s linear forwards;
+            /* 熊跑完的动画和自身做动作的动画 */
+            /* step就是步频 在1s种之内分为8步做完熊跑步psd图 */
+
+
+        }
+
+        @keyframes run {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                /* 熊整个psd图跑完的距离 */
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes runpos {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                /* 跑到页面正中间 */
+                left: 50%;
+                transform: translatex(-50%);
+            }
+        }
+
+        @keyframes backrun {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="one"></div>
+    </div>
+</body>
+
+</html>

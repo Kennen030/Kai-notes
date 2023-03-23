@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单案例1</title>
+    <style>
+        #pink {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h4 align="center">青春不常在,抓紧打游戏</h4>
+    <table width="30%" align="center">
+        <!-- 第一行 -->
+        <tr id="pink">
+            <td>性别</td>
+            <td>
+                <input type="radio" name="sex" value="nan" id="nan"/><label for="nan">男&nbsp;<img src="images/man.jpg"/></label>
+                <input type="radio" name="sex" value="nv" id="nv"/><label for="nv">女&nbsp;<img src="images/women.jpg"/></label>
+                <input type="radio" name="sex" value="wz"/>未知
+            </td>
+        </tr>
+        <!-- 第二行 -->
+        <tr>
+            <td>生日</td>
+            <td>
+                <select name="year">
+                    <option value="">--请选择年份--</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                </select>
+                <select name="month">
+                    <option value="">--请选择月份--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="day">
+                    <option value="">--请选择日--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select><br>
+        </td>
+        </tr>
+        <!-- 第三行 -->
+        <tr>
+            <td>所在地区</td>
+            <td>
+                <input type="text" placeholder="江西省，南昌市"/>
+            </td>
+        </tr>
+        <!-- 第四行 -->
+        <tr>
+            <td>婚姻状况</td>
+            <td>
+                <input type="radio" name="hunyin" value="weihun" id="weihun"/><label for="weihun">未婚</label>
+                <input type="radio" name="hunyin" value="yihun" id="yihun"/><label for="yihun">女</label>
+                <input type="radio" name="hunyin" value="lihun" id="lihun"/><label for="lihun">离婚</label>
+            </td>
+        </tr>
+        <!-- 第五行 -->
+        <tr>
+            <td>学历</td>
+            <td>
+                <input type="text" placeholder="幼儿园"/>
+            </td>
+        </tr>
+        <!-- 第六行 -->
+        <tr>
+            <td>喜欢类型</td>
+            <td>
+                <label for="sing">唱</label><input type="checkbox" name="hobby" value="sing" id="sing"/>
+                <label for="dance">跳</label><input type="checkbox" name="hobby" value="dance" id="dance"/>
+                <label for="rap">Rap</label><input type="checkbox" name="hobby" value="rap" id="rap"/>
+                <label for="basketball">篮球</label><input type="checkbox" name="nobby" value="basketball" id="basketball"/><br>
+            </td>
+        </tr>
+        <!-- 第七行 -->
+        <tr>
+            <td>个人介绍</td>
+            <td>
+                <textarea placeholder="个人简介"></textarea>
+            </td>
+        </tr>
+        <!-- 第八行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="免费注册"/>
+            </td>
+        </tr>
+        <!-- 第九行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="checkbox" name="tongyi" value="tongyi" id="tongyi"/><label for="tongyi">我同意注册条款和会员加入标准</label>
+            </td>
+        </tr>
+        <!-- 第十行 -->
+        <tr>
+            <td></td>
+            <td>
+                <a href="#">我是会员，立即登录</a>
+            </td>
+        </tr>
+        <!-- 第十一行 -->
+        <tr>
+            <td></td>
+            <td>
+                <h5>TGP2022年年度最佳游戏</h5>
+                <ul>
+                    <li>精灵与萤火意志</li>
+                    <li>宝可梦</li>
+                    <li>使命召唤</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            float: left;
+            padding: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #ff1;
+            /* transform: rotate(旋转度数deg); */
+            transform: rotate(45deg);
+            transition: all 0.9s;
+        }
+
+        .box1:hover {
+            transform: rotate(360deg);
+        }
+
+        .box2 {
+            float: left;
+            padding: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #5be457;
+            transition: all 0.9s;
+            transform: rotate(90deg);
+        }
+
+        .box2:hover {
+            transform: rotate(45deg);
+        }
+
+        .box3 {
+            float: left;
+            padding: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #588dff;
+            transition: all 0.9s;
+            transform: rotate(-45deg);
+        }
+
+        .box3:hover {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">1234</div>
+    <div class="box2">2345</div>
+    <div class="box3">3456</div>
+</body>
+<!-- rotate 里面跟着度数，单位是deg  如：(45deg) -->
+<!-- 正数为顺时针旋转，负数反之 -->
+<!-- 默认旋转的中心点是 元素 的中心点 -->
+
+</html>
